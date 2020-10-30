@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from 'react';
 
 //Components
 import Head from '../components/head';
@@ -10,16 +10,16 @@ import Layout from '../layouts/layout';
 //Context
 import AppProvider from '../context/App.provider';
 
-const Main = () => {
-
+const About = () => {
   return (
     <AppProvider>
       <Layout>
-        <Head titleSecond="main" />
-        <MainPage />
+        <Head titleSecond="about" />
+        <h1>fasfasfasfasfasfasf</h1>
+        <div>dupkjakakakkasfasfasfasfas</div>
       </Layout>
     </AppProvider>
   )
 }
 
-export default Main;
+export default About;

@@ -1,0 +1,11 @@
+@import './Variables';
+@import './Mixins';
+
+.footer{
+  @include flex-mother(row,center,center);
+  height: $footer640;
+  font-size: 0.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: $thirdColor;
+  color: $fontColorSecond;
+}
