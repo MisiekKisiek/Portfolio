@@ -17,17 +17,11 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-sass`,
-    // {
-    //   resolve: `gatsby-plugin-layout`,
-    //   options: {
-    //     component: require.resolve(`./src/layouts/layout.js`),
-    //   },
-    // },
     {
       resolve: "gatsby-plugin-transition-link",
       options: {
-          layout: require.resolve(`./src/layouts/layout.js`)
-        }
+        layout: require.resolve(`./src/layouts/layout.js`)
+      }
     },
   ],
 }

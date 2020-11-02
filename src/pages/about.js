@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React from 'react';
 
 //Components
 import Head from '../components/head';
@@ -8,16 +8,11 @@ import AppContext from '../context/App.context';
 
 const About = () => {
 
-  const {menu} = useContext(AppContext);
-
   return (
-      <>
-        <Head titleSecond="about" />
-        <h1>fasfasfasfasfasfasf</h1>
-        <button onClick={()=>{
-          console.log(menu)
-        }}>fasfasf</button>
-      </>
+    <>
+      <Head titleSecond="about" />
+      <h1>about</h1>
+    </>
   )
 }
 

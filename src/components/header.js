@@ -1,7 +1,8 @@
 import React, { useContext, useRef } from 'react';
-import  Link  from 'gatsby-plugin-transition-link';
+import Link from 'gatsby-plugin-transition-link';
 import TransitionLink from 'gatsby-plugin-transition-link';
-
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from "gatsby-image";
 
 //FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,45 +19,64 @@ import gsap from 'gsap';
 
 const Header = () => {
 
-	const test = useRef(null)
+	const data = useStaticQuery(graphql`
+		query {
+			logo50: file(relativePath: { eq: "logo.png" }) {
+				childImageSharp {
+					fixed(width: 50, height: 50){
+						...GatsbyImageSharpFixed
+					}
+				}
+			}
+			logo60: file(relativePath: { eq: "logo.png" }) {
+				childImageSharp {
+					fixed(width: 100, height: 100){
+						...GatsbyImageSharpFixed
+					}
+				}
+			}
+		}
+	`)
 
-	const TRANSITION_LENGTH = 1.5
-
-	const exitTransition = {
-	length: TRANSITION_LENGTH, 
-	trigger: async() => {
-		await gsap.to(test.current,1,{autoAlpha: 1,display:'block'});
-		handleMenu();
-	},
-	}
-
-	const entryTransition = {
-	delay: TRANSITION_LENGTH, 
-	trigger: ({exit,node,entry}) => {
-		console.group();
-		console.log(exit)
-		console.log(node)
-		console.log(entry)
-		gsap.to(test.current,1,{autoAlpha: 0,display:'none'})
-	},
-	}
+	const curtine = useRef(null);
 
 	const {
 		menu,
 		handleMenu,
 	} = useContext(AppContext);
-	
+
+	const TRANSITION_LENGTH = 1.5
+
+	const exitTransition = {
+		length: TRANSITION_LENGTH / 2,
+		trigger: async () => {
+			await gsap.to(curtine.current, 0.8, { autoAlpha: 1, display: 'block' });
+			handleMenu();
+		},
+	}
+
+	const entryTransition = {
+		delay: TRANSITION_LENGTH * 2,
+		trigger: () => {
+			gsap.to(curtine.current, 1, { autoAlpha: 0, display: 'none' })
+		},
+	}
+
+
+
 	return (
 		<header className={headerStyles.header}>
-			<div ref={test} className={headerStyles.curtine}>
-				<img src="../img/logo.png" alt="logo"/>
+			<div ref={curtine} className={headerStyles.curtine}>
+				<div>
+					<Img fixed={data.logo60.childImageSharp.fixed} />
+				</div>
 			</div>
 			<div className={
 				menu ?
 					`${headerStyles.logo} ${headerStyles.logoActive}` :
 					`${headerStyles.logo}`}
 			>
-				<img src="../img/logo.png" alt="logo"/>
+				<Img fixed={data.logo50.childImageSharp.fixed} />
 			</div>
 			<button className={
 				menu ?
@@ -74,20 +94,35 @@ const Header = () => {
 				<ul>
 					<li>
 						<TransitionLink
-						  activeClass="active"
-						  exit={exitTransition}
-						  entry={entryTransition}
-						  to="/" >Strona główna
+							activeClass="active"
+							exit={exitTransition}
+							entry={entryTransition}
+							to="/" >Strona główna
 						</TransitionLink>
 					</li>
 					<li>
-						<Link to="/about" activeClass="active" onClick={handleMenu}>O nas</Link>
+						<TransitionLink
+							activeClass="active"
+							exit={exitTransition}
+							entry={entryTransition}
+							to="/about" >O nas
+						</TransitionLink>
 					</li>
 					<li>
-						<TransitionLink to="/projects" onClick={handleMenu}>Realizacje</TransitionLink>
+						<TransitionLink
+							activeClass="active"
+							exit={exitTransition}
+							entry={entryTransition}
+							to="/projects" >Realizacje
+						</TransitionLink>
 					</li>
 					<li>
-						<TransitionLink to="/contact" onClick={handleMenu}>Kontakt</TransitionLink>
+						<TransitionLink
+							activeClass="active"
+							exit={exitTransition}
+							entry={entryTransition}
+							to="/contact" >Kontakt
+						</TransitionLink>
 					</li>
 				</ul>
 			</div>
