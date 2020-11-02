@@ -2,9 +2,16 @@ $header640: 60px;
 
 $footer640: 40px;
 
-$mainColor: rgba(247,247,247, 1);
-$secondColor: royalblue;
+$mainColor: rgba(247, 247, 247, 1);
+$secondColor: rgba(65, 105, 225, 1);
 $thirdColor: #222;
+
+$backgroundGradient: linear-gradient(
+  90deg,
+  rgba(70, 110, 230, 1) 0%,
+  $secondColor 50%,
+  rgba(70, 110, 230, 1) 100%
+);
 
 $fontColorFirst: #000;
 $fontColorSecond: #f0f0f0;

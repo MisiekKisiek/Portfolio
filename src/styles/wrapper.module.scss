@@ -1,0 +1,11 @@
+@import "./Variables";
+@import "./Mixins";
+
+.wrap {
+  min-height: 100vh;
+}
+
+.wrap-active {
+  max-height: 100vh;
+  overflow: hidden;
+}

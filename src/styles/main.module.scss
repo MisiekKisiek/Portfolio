@@ -1,11 +1,7 @@
-@import './Variables';
-@import './Mixins';
+@import "./Variables";
+@import "./Mixins";
 
-.main{
+.main {
   flex-grow: 1;
   height: 200vh;
-}
-
-.main-active{
-  max-height: calc(100vh - #{$header640} - #{$footer640});
 }

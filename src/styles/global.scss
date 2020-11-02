@@ -1,18 +1,19 @@
-@import './Variables';
-@import './Mixins';
+@import "./Variables";
+@import "./Mixins";
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   min-height: 100vh;
   background-color: $mainColor;
 }
 
-#gatsby-focus-wrapper{
+#gatsby-focus-wrapper {
   @include flex-mother(column);
   min-height: 100vh;
+  overflow: hidden;
 }

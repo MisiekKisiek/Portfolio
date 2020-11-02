@@ -1,24 +1,23 @@
-import React from 'react';
+import React,{useContext} from 'react';
 
 //Components
 import Head from '../components/head';
-import MainPage from '../components/mainPage';
-
-//Layouts 
-import Layout from '../layouts/layout';
 
 //Context
-import AppProvider from '../context/App.provider';
+import AppContext from '../context/App.context';
 
 const About = () => {
+
+  const {menu} = useContext(AppContext);
+
   return (
-    <AppProvider>
-      <Layout>
+      <>
         <Head titleSecond="about" />
         <h1>fasfasfasfasfasfasf</h1>
-        <div>dupkjakakakkasfasfasfasfas</div>
-      </Layout>
-    </AppProvider>
+        <button onClick={()=>{
+          console.log(menu)
+        }}>fasfasf</button>
+      </>
   )
 }
 

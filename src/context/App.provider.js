@@ -7,20 +7,17 @@ import AppContext, { defaultValue } from './App.context';
 class AppProvider extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      defaultValue
-    }
+    this.state = defaultValue
   }
 
-  handleMenuVisibility = () => {
-    console.log('aaaaaasdadasfasfzxv')
-    if (this.state.menuVisibility) {
+  handleMenu = () => {
+    if (this.state.menu) {
       this.setState({
-        menuVisibility: false
+        menu: false
       })
     } else {
       this.setState({
-        menuVisibility: true
+        menu: true
       })
     }
 
@@ -28,8 +25,8 @@ class AppProvider extends Component {
   render() {
     return (
       <AppContext.Provider value={{
-        menuVisibility: this.state.menuVisibility,
-        handleMenuVisibility: this.handleMenuVisibility,
+        menu: this.state.menu,
+        handleMenu: this.handleMenu,
       }}>
         {this.props.children}
       </AppContext.Provider>

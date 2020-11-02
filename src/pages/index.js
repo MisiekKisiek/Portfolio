@@ -2,23 +2,19 @@ import React, { useContext } from "react";
 
 //Components
 import Head from '../components/head';
-import MainPage from '../components/mainPage';
 
-//Layouts 
-import Layout from '../layouts/layout';
-
-//Context
-import AppProvider from '../context/App.provider';
+//Styles
+import mainStyles from '../styles/main.module.scss';
 
 const Main = () => {
-
   return (
-    <AppProvider>
-      <Layout>
-        <Head titleSecond="main" />
-        <MainPage />
-      </Layout>
-    </AppProvider>
+      <>
+          <Head titleSecond="main" />
+            <main 
+            className={mainStyles.main}
+            >
+            </main>
+      </>
   )
 }
 

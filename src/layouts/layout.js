@@ -3,15 +3,21 @@ import React from 'react';
 //Components
 import Header from '../components/header';
 import Footer from '../components/footer';
+import MainWrap from '../components/mainWrap';
 
-const Leyout = ({ children }) => {
+//Context
+import AppProvider from '../context/App.provider';
+
+const Layout = ({ children }) => {
     return (
-        <>
-            <Header />
-            {children}
-            <Footer />
-        </>
+            <AppProvider>
+                <MainWrap>
+                    <Header />
+                        {children}
+                    <Footer />
+                </MainWrap>
+            </AppProvider>
     );
 }
 
-export default Leyout;
+export default Layout;

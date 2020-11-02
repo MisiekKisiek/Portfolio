@@ -1,15 +1,15 @@
 import { createContext } from 'react';
 
 const defaultValue = {
-  menuVisibility: false,
-  handleMenuVisibility: () => { },
+  menu: false,
+  handleMenu: () => { },
 }
-
-export { defaultValue };
 
 const AppContext = createContext(defaultValue);
 
 export default AppContext;
+
+export { defaultValue };
 
 /*
 if (context) setcontext(prevState => ({ ...prevState, menuVisibility: false }));
