@@ -1,18 +1,21 @@
 @import "./Variables";
 @import "./Mixins";
 
-.contact{
+.contact {
+  @include flex-mother(column, flex-start, center);
   min-height: calc(100vh - #{$header640} - #{$footer640});
-  h1{
-    margin: 20px 10px;
+  h1 {
+    padding: 20px 10px;
     text-align: center;
     font-size: 1.6rem;
   }
-  form{
-    div{
-      label{
+  form {
+    div {
+      @include contact-input();
+      label {
       }
-      input{}
+      input {
+      }
     }
   }
 }

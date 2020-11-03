@@ -20,16 +20,16 @@ const Contact = () => {
       <h1>Jeżeli zainteresowała Cię nasza oferta, napisz!</h1>
       <form>
         <div>
-          <label htmlFor="name">Name</label>
           <input type="text" id="name" />
+          <label htmlFor="name">Name</label>
         </div>
         <div>
-          <label htmlFor="email">Name</label>
           <input type="text" id="email" />
+          <label htmlFor="email">E-mail</label>
         </div>
         <div>
-          <label htmlFor="text">Name</label>
           <textarea type="text" id="text" cols="3" rows="4" />
+          <label htmlFor="text">Message</label>
         </div>
       </form>
     </main>

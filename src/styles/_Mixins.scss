@@ -10,3 +10,40 @@
   align-items: $align-items;
   flex-wrap: $flex-wrap;
 }
+
+@mixin contact-input() {
+  position: relative;
+  width: 200px;
+  height: 2.4rem;
+  margin: 0 0 30px 0;
+  input {
+    width: 100%;
+    height: 100%;
+    line-height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+    background-color: transparent;
+  }
+  label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.4);
+    transition: 0.2s;
+  }
+  input:hover + label {
+    bottom: 100%;
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+  }
+}
