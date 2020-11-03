@@ -10,13 +10,13 @@ import AppProvider from '../context/App.provider';
 
 const Layout = ({ children }) => {
     return (
-            <AppProvider>
-                <MainWrap>
-                    <Header />
-                        {children}
-                    <Footer />
-                </MainWrap>
-            </AppProvider>
+        <AppProvider>
+            <MainWrap>
+                <Header />
+                {children}
+                <Footer />
+            </MainWrap>
+        </AppProvider>
     );
 }
 

@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React, { useContext } from 'react';
 
 //Styles
 import wrapStyles from '../styles/wrapper.module.scss';
@@ -6,13 +6,30 @@ import wrapStyles from '../styles/wrapper.module.scss';
 //Context
 import AppContext from '../context/App.context';
 
-const MainWrap = ({children}) => {
+const MainWrap = ({ children }) => {
 
-  const {menu} = useContext(AppContext);
+  const { menu, menuSticky } = useContext(AppContext);
 
-  return ( 
-    <div className={menu?`${wrapStyles.wrapActive} ${wrapStyles.wrap}`:wrapStyles.wrap}>{children}</div>
-   );
+  const classesWrap = () => {
+    if (menu) {
+      if (menuSticky) {
+        return `${wrapStyles.wrapActive} ${wrapStyles.wrap} ${wrapStyles.wrapSticky}`
+      } else {
+        return `${wrapStyles.wrapActive} ${wrapStyles.wrap}`
+      }
+
+    } else {
+      if (menuSticky) {
+        return `${wrapStyles.wrap} ${wrapStyles.wrapSticky}`
+      } else {
+        return wrapStyles.wrap
+      }
+    }
+  }
+
+  return (
+    <div className={classesWrap()}>{children}</div>
+  );
 }
- 
+
 export default MainWrap;

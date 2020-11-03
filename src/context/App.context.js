@@ -3,6 +3,8 @@ import { createContext } from 'react';
 const defaultValue = {
   menu: false,
   handleMenu: () => { },
+  menuSticky: false,
+  handleMenuSticky: () => { },
 }
 
 const AppContext = createContext(defaultValue);

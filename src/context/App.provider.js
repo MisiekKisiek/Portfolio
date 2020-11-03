@@ -20,13 +20,30 @@ class AppProvider extends Component {
         menu: true
       })
     }
-
   }
+
+  handleMenuSticky = () => {
+    const changeState = () => {
+      if (window.pageYOffset > 100) {
+        this.setState({
+          menuSticky: true,
+        })
+      } else {
+        this.setState({
+          menuSticky: false,
+        })
+      }
+    }
+    window.addEventListener('scroll', changeState)
+  }
+
   render() {
     return (
       <AppContext.Provider value={{
         menu: this.state.menu,
         handleMenu: this.handleMenu,
+        menuSticky: this.state.menuSticky,
+        handleMenuSticky: this.handleMenuSticky,
       }}>
         {this.props.children}
       </AppContext.Provider>

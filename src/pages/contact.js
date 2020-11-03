@@ -8,30 +8,45 @@ import contactStyles from '../styles/contact.module.scss';
 
 const Contact = () => {
 
-  const nameInput = useRef("");
-  const emailInput = useRef("");
-  const textInput = useRef("");
+  const nameInput = useRef(null);
+  const emailInput = useRef(null);
+  const textInput = useRef(null);
+  const nameLabel = useRef(null);
+  const emailLabel = useRef(null);
+  const textLabel = useRef(null);
 
-  const [focusedInput, setfocusedInput] = useState(null);
+  const [name, setname] = useState("");
+  const [email, setemail] = useState("");
+  const [text, settext] = useState("");
+
+  const setInputValues = (e) => {
+    if (e.name) console.log('a')
+  }
 
   return (<>
     <Head titleSecond="kontakt" />
     <main className={contactStyles.contact}>
       <h1>Jeżeli zainteresowała Cię nasza oferta, napisz!</h1>
-      <form>
-        <div>
-          <input type="text" id="name" />
-          <label htmlFor="name">Name</label>
-        </div>
-        <div>
-          <input type="text" id="email" />
-          <label htmlFor="email">E-mail</label>
-        </div>
-        <div>
-          <textarea type="text" id="text" cols="3" rows="4" />
-          <label htmlFor="text">Message</label>
-        </div>
-      </form>
+      <section>
+        <form>
+          <div>
+            <input ref={nameInput} type="text" id="name" />
+            <label ref={nameLabel} htmlFor="name">Name</label>
+          </div>
+          <div>
+            <input ref={emailInput} type="text" id="email" />
+            <label ref={emailLabel} htmlFor="email">E-mail</label>
+          </div>
+          <div>
+            <textarea ref={textInput} type="text" id="text" />
+            <label ref={textLabel} htmlFor="text">Message</label>
+          </div>
+          <button onClick={(e) => { e.preventDefault(); }}>Wyślij!</button>
+        </form>
+      </section>
+      <section>
+
+      </section>
     </main>
   </>);
 }

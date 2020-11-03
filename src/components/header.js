@@ -1,5 +1,4 @@
-import React, { useContext, useRef } from 'react';
-import Link from 'gatsby-plugin-transition-link';
+import React, { useContext, useRef, useEffect } from 'react';
 import TransitionLink from 'gatsby-plugin-transition-link';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from "gatsby-image";
@@ -18,6 +17,13 @@ import AppContext from '../context/App.context'
 import gsap from 'gsap';
 
 const Header = () => {
+
+	const {
+		menu,
+		handleMenu,
+		menuSticky,
+		handleMenuSticky,
+	} = useContext(AppContext);
 
 	const data = useStaticQuery(graphql`
 		query {
@@ -40,11 +46,6 @@ const Header = () => {
 
 	const curtine = useRef(null);
 
-	const {
-		menu,
-		handleMenu,
-	} = useContext(AppContext);
-
 	const TRANSITION_LENGTH = 1.5
 
 	const exitTransition = {
@@ -56,16 +57,18 @@ const Header = () => {
 	}
 
 	const entryTransition = {
-		delay: TRANSITION_LENGTH * 2,
+		delay: TRANSITION_LENGTH * 1.2,
 		trigger: () => {
 			gsap.to(curtine.current, 1, { autoAlpha: 0, display: 'none' })
 		},
 	}
 
-
+	useEffect(() => {
+		handleMenuSticky();
+	}, []);
 
 	return (
-		<header className={headerStyles.header}>
+		<header className={`${headerStyles.header} ${menuSticky ? headerStyles.headerSticky : ""}`}>
 			<div ref={curtine} className={headerStyles.curtine}>
 				<div>
 					<Img fixed={data.logo60.childImageSharp.fixed} />

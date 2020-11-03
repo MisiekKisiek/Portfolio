@@ -2,6 +2,7 @@ import React from "react";
 
 //Components
 import Head from '../components/head';
+import Decoration from '../components/pagesDecoration';
 
 //Styles
 import mainStyles from '../styles/main.module.scss';
@@ -11,6 +12,7 @@ const Main = () => {
     <>
       <Head titleSecond="main" />
       <main className={mainStyles.main}>
+        <Decoration></Decoration>
       </main>
     </>
   )
