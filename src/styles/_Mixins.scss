@@ -25,10 +25,11 @@
     padding: 2px;
     border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 3px;
-    font-size: 1.4rem;
+    font-size: 1rem;
+    font-family: monospace;
+    font-weight: normal;
     background-color: transparent;
     resize: none;
-    z-index: 20;
     &:focus {
       outline: none;
       box-shadow: 0 0 1px 1px royalblue;
@@ -39,32 +40,25 @@
     top: 50%;
     left: 2px;
     transform: translate(0, -50%);
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: rgba(0, 0, 0, 0.4);
     transition: 0.2s;
-    z-index: 1;
   }
   input:hover + label,
   input:focus + label,
   textarea:hover + label,
-  textarea:focus + label {
+  textarea:focus + label{
     top: 0;
     transform: translate(0, -100%);
     font-size: 0.8rem;
   }
   &:last-of-type {
     height: 180px;
-    // margin-bottom: 20px;
     label {
       position: absolute;
       top: 0%;
       left: 2px;
       transform: translate(0, 0);
     }
-  }
-  .active {
-    top: 0;
-    transform: translate(0, -100%);
-    font-size: 0.8rem;
   }
 }
