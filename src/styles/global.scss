@@ -8,12 +8,10 @@
 }
 
 body {
-  min-height: 100vh;
   background-color: $mainColor;
 }
 
-#gatsby-focus-wrapper {
-  @include flex-mother(column);
-  min-height: 100vh;
-  overflow: hidden;
+.tl-edges {
+  min-height: calc(100vh - #{$header640} - #{$footer640});
+  margin-top: $header640;
 }

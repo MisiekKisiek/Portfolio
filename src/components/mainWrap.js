@@ -8,27 +8,10 @@ import AppContext from '../context/App.context';
 
 const MainWrap = ({ children }) => {
 
-  const { menu, menuSticky } = useContext(AppContext);
-
-  const classesWrap = () => {
-    if (menu) {
-      if (menuSticky) {
-        return `${wrapStyles.wrapActive} ${wrapStyles.wrap} ${wrapStyles.wrapSticky}`
-      } else {
-        return `${wrapStyles.wrapActive} ${wrapStyles.wrap}`
-      }
-
-    } else {
-      if (menuSticky) {
-        return `${wrapStyles.wrap} ${wrapStyles.wrapSticky}`
-      } else {
-        return wrapStyles.wrap
-      }
-    }
-  }
+  const { menu} = useContext(AppContext);
 
   return (
-    <div className={classesWrap()}>{children}</div>
+    <div className={menu?`${wrapStyles.wrapActive} ${wrapStyles.wrap}`:wrapStyles.wrap}>{children}</div>
   );
 }
 

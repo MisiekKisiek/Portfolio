@@ -1,21 +1,24 @@
 @import "./Variables";
 @import "./Mixins";
 
-.header {
-  @include flex-mother(row, space-between, center);
-  position: relative;
-  top:0;
-  left:0;
-  height: $header640;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
-  transition: 2s;
+@keyframes link-list-opa {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.header-sticky{
+.header {
+  @include flex-mother(row, space-between, center);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: $header640;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  background-color: $mainColor;
   z-index: 100;
 }
 
@@ -92,16 +95,7 @@
   left: 0;
   ul {
     opacity: 1;
-    transition: 1.2s 0.3s;
-  }
-}
-
-@keyframes link-list-opa {
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
+    transition: 1s 0.3s;
   }
 }
 
@@ -114,15 +108,15 @@
   height: 100vh;
   background: $backgroundGradient;
   z-index: 30;
-  >div{
+  > div {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
   }
 }
 
-@media(min-width: 1024px){
+@media (min-width: 1024px) {
   .curtine {
     top: $header640;
     height: calc(100vh - #{$header640});

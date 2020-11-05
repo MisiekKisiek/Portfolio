@@ -21,8 +21,6 @@ const Header = () => {
 	const {
 		menu,
 		handleMenu,
-		menuSticky,
-		handleMenuSticky,
 	} = useContext(AppContext);
 
 	const data = useStaticQuery(graphql`
@@ -49,7 +47,7 @@ const Header = () => {
 	const TRANSITION_LENGTH = 1.5
 
 	const exitTransition = {
-		length: TRANSITION_LENGTH / 2,
+		length: TRANSITION_LENGTH,
 		trigger: async () => {
 			await gsap.to(curtine.current, 0.8, { autoAlpha: 1, display: 'block' });
 			handleMenu();
@@ -57,18 +55,14 @@ const Header = () => {
 	}
 
 	const entryTransition = {
-		delay: TRANSITION_LENGTH * 1.2,
+		delay: TRANSITION_LENGTH ,
 		trigger: () => {
-			gsap.to(curtine.current, 1, { autoAlpha: 0, display: 'none' })
+			gsap.to(curtine.current, 1, { autoAlpha: 0, display: 'none' });
 		},
 	}
 
-	useEffect(() => {
-		handleMenuSticky();
-	}, []);
-
 	return (
-		<header className={`${headerStyles.header} ${menuSticky ? headerStyles.headerSticky : ""}`}>
+		<header className={`${headerStyles.header}`}>
 			<div ref={curtine} className={headerStyles.curtine}>
 				<div>
 					<Img fixed={data.logo60.childImageSharp.fixed} />

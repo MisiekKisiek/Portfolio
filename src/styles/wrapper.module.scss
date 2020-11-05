@@ -2,14 +2,10 @@
 @import "./Mixins";
 
 .wrap {
-  min-height: 100vh;
+  // min-height: calc(100vh - #{$header640});
 }
 
 .wrap-active {
   max-height: 100vh;
   overflow: hidden;
-}
-
-.wrap-sticky{
-  margin-top: $header640;
 }
