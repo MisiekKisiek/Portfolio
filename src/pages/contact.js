@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import emailjs from 'emailjs-com'; 
 
 //Components
 import Head from '../components/head';
@@ -47,18 +48,30 @@ const Contact = () => {
     }
   }
 
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('gmail', 'template_test', e.target, 'user_qZY7FllS46aSyJuEosQN8')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  }
+
   return (<>
     <Head titleSecond="kontakt" />
     <main className={contactStyles.contact}>
       <h1>Jeżeli zainteresowała Cię nasza oferta, napisz!</h1>
       <div>
         <section>
-          <form>
+          <form onSubmit={sendEmail}>
             <div>
               <input
                 ref={nameInput}
                 type="text"
                 id="name"
+                name="name"
                 value={name}
                 onChange={setInputValues} />
               <label ref={nameLabel} htmlFor="name">Name</label>
@@ -68,6 +81,7 @@ const Contact = () => {
                 ref={emailInput}
                 type="text"
                 id="email"
+                name="email"
                 value={email}
                 onChange={setInputValues} />
               <label ref={emailLabel} htmlFor="email">E-mail</label>
@@ -77,11 +91,12 @@ const Contact = () => {
                 ref={textInput}
                 type="text"
                 id="text"
+                name="message"
                 value={text}
                 onChange={setInputValues} />
               <label ref={textLabel} htmlFor="text">Message</label>
             </div>
-            <button onClick={(e) => { e.preventDefault(); }}>Wyślij!</button>
+            <button type="submit">Wyślij!</button>
           </form>
         </section>
         <section>

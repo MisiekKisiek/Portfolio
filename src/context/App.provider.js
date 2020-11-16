@@ -10,15 +10,15 @@ class AppProvider extends Component {
     this.state = defaultValue
   }
 
-  handleMenu = () => {
-    if (this.state.menu) {
+  handleMenu = (e) => {
+    if (e.node) {
       this.setState({
         menu: false
       })
-    } else {
-      this.setState({
-        menu: true
-      })
+    } else if(e.target) {
+      this.setState(prevState => ({
+        menu: !prevState.menu
+      }))
     }
   }
 

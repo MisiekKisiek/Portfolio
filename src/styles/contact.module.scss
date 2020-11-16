@@ -4,6 +4,8 @@
 .contact {
   @include flex-mother(column, flex-start, center);
   min-height: calc(100vh - #{$header640} - #{$footer640});
+  max-width: 1024px;
+  margin: auto;
   h1 {
     width: 80%;
     padding: 16px 0;

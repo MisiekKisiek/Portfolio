@@ -12,7 +12,6 @@ const Main = () => {
     <>
       <Head titleSecond="main" />
       <main className={mainStyles.main}>
-        <Decoration></Decoration>
       </main>
     </>
   )

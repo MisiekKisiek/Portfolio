@@ -48,9 +48,9 @@ const Header = () => {
 
 	const exitTransition = {
 		length: TRANSITION_LENGTH,
-		trigger: async () => {
+		trigger: async (e) => {
 			await gsap.to(curtine.current, 0.8, { autoAlpha: 1, display: 'block' });
-			handleMenu();
+			handleMenu(e);
 		},
 	}
 

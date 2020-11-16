@@ -18,6 +18,16 @@ module.exports = {
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-sass`,
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Comfortaa`,
+          `Comfortaa\:300,400,400i,700`
+        ],
+        display: 'swap'
+      }
+    },
+    {
       resolve: "gatsby-plugin-transition-link",
       options: {
         layout: require.resolve(`./src/layouts/layout.js`)
