@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import emailjs from 'emailjs-com'; 
+import emailjs from 'emailjs-com';
 
 //Components
 import Head from '../components/head';
@@ -21,41 +21,57 @@ const Contact = () => {
   const [email, setemail] = useState("");
   const [text, settext] = useState("");
 
-  const setInputValues = (e) => {
-    const handleLabelStyle = (label) => {
+  const handleLabelStyle = (e, label) => {
+    if (e) {
       if (e.target.value) {
         label.current.style.top = "0"
         label.current.style.transform = "translate(0, -100%)"
         label.current.style.fontSize = ".8rem"
-      }
-      else {
+      } else {
         label.current.style.top = ""
         label.current.style.transform = ""
         label.current.style.fontSize = ""
       }
     }
+    else {
+      label.current.style.top = ""
+      label.current.style.transform = ""
+      label.current.style.fontSize = ""
+    }
+  }
+
+  const setInputValues = (e) => {
     if (e.target.id === "name") {
       setname(e.target.value);
-      handleLabelStyle(nameLabel);
+      handleLabelStyle(e, nameLabel);
     }
     if (e.target.id === "email") {
       setemail(e.target.value);
-      handleLabelStyle(emailLabel);
+      handleLabelStyle(e, emailLabel);
     }
     if (e.target.id === "text") {
       settext(e.target.value);
-      handleLabelStyle(textLabel);
+      handleLabelStyle(e, textLabel);
     }
+  }
+
+  const handleSubmitContactForm = () => {
+    setname("");
+    setemail("");
+    settext("");
+    [nameLabel, emailLabel, textLabel].map(label => {
+      handleLabelStyle(null, label);
+    })
   }
 
   function sendEmail(e) {
     e.preventDefault();
-
     emailjs.sendForm('gmail', 'template_test', e.target, 'user_qZY7FllS46aSyJuEosQN8')
       .then((result) => {
-          console.log(result.text);
+        console.log(result.text);
+        handleSubmitContactForm();
       }, (error) => {
-          console.log(error.text);
+        console.log(error.text);
       });
   }
 
