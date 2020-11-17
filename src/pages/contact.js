@@ -78,7 +78,7 @@ const Contact = () => {
   return (<>
     <Head titleSecond="kontakt" />
     <main className={contactStyles.contact}>
-      <h1>Jeżeli zainteresowała Cię nasza oferta, napisz!</h1>
+      <h1>Jeżeli zainteresowała Cię nasza oferta, skontaktuj się!</h1>
       <div>
         <section>
           <form onSubmit={sendEmail}>

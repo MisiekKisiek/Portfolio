@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect } from 'react';
+import React, { useContext, useRef } from 'react';
 import TransitionLink from 'gatsby-plugin-transition-link';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from "gatsby-image";
@@ -32,7 +32,7 @@ const Header = () => {
 					}
 				}
 			}
-			logo60: file(relativePath: { eq: "logo.png" }) {
+			logo100: file(relativePath: { eq: "logo.png" }) {
 				childImageSharp {
 					fixed(width: 100, height: 100){
 						...GatsbyImageSharpFixed
@@ -55,17 +55,17 @@ const Header = () => {
 	}
 
 	const entryTransition = {
-		delay: TRANSITION_LENGTH ,
+		delay: TRANSITION_LENGTH,
 		trigger: () => {
 			gsap.to(curtine.current, 1, { autoAlpha: 0, display: 'none' });
 		},
 	}
-
+	console.log(data.logo100.childImageSharp.fixed)
 	return (
 		<header className={`${headerStyles.header}`}>
 			<div ref={curtine} className={headerStyles.curtine}>
 				<div>
-					<Img fixed={data.logo60.childImageSharp.fixed} />
+					<Img fixed={data.logo100.childImageSharp.fixed} />
 				</div>
 			</div>
 			<div className={
@@ -91,7 +91,6 @@ const Header = () => {
 				<ul>
 					<li>
 						<TransitionLink
-							activeClass="active"
 							exit={exitTransition}
 							entry={entryTransition}
 							to="/" >Strona główna
@@ -99,7 +98,6 @@ const Header = () => {
 					</li>
 					<li>
 						<TransitionLink
-							activeClass="active"
 							exit={exitTransition}
 							entry={entryTransition}
 							to="/about" >O nas
@@ -107,7 +105,6 @@ const Header = () => {
 					</li>
 					<li>
 						<TransitionLink
-							activeClass="active"
 							exit={exitTransition}
 							entry={entryTransition}
 							to="/projects" >Realizacje
@@ -115,7 +112,6 @@ const Header = () => {
 					</li>
 					<li>
 						<TransitionLink
-							activeClass="active"
 							exit={exitTransition}
 							entry={entryTransition}
 							to="/contact" >Kontakt
