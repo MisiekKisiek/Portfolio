@@ -60,7 +60,6 @@ const Header = () => {
 			gsap.to(curtine.current, 1, { autoAlpha: 0, display: 'none' });
 		},
 	}
-	console.log(data.logo100.childImageSharp.fixed)
 	return (
 		<header className={`${headerStyles.header}`}>
 			<div ref={curtine} className={headerStyles.curtine}>
@@ -94,6 +93,13 @@ const Header = () => {
 							exit={exitTransition}
 							entry={entryTransition}
 							to="/" >Strona główna
+						</TransitionLink>
+					</li>
+					<li>
+						<TransitionLink
+							exit={exitTransition}
+							entry={entryTransition}
+							to="/offer" >Oferta
 						</TransitionLink>
 					</li>
 					<li>

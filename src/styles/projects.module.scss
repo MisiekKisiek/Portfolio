@@ -1,16 +1,20 @@
 @import "./Variables";
 @import "./Mixins";
 
-.container{
-  h1{
+.container {
+  max-width: 1024px;
+  margin: auto;
+  h1 {
     position: relative;
     height: 100px;
     line-height: 100px;
     text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
     color: $secondColor;
-    &::after, &::before{
-      content:"";
+    &::after,
+    &::before {
+      content: "";
       display: block;
       position: absolute;
       top: 0;
@@ -18,51 +22,86 @@
       width: 30px;
       height: 100px;
       clip-path: polygon(20% 0, 100% 0%, 75% 100%, 0% 100%);
-      background-color: rgba(255,255,0,0.7);
+      background-color: rgba(255, 255, 0, 0.7);
     }
-    &::before{
+    &::before {
       left: calc(76% + 30px);
-      background-color: rgba(65, 105, 225,0.7);
+      background-color: rgba(65, 105, 225, 0.7);
     }
   }
-  section{
-    div{
+  section {
+    div {
       width: 85%;
       margin: 20px auto;
       border-radius: 5px;
-      box-shadow: 0 0 3px 1px rgba(0,0,0,0.04);
-      transition: .2s;
+      box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.04);
+      background-color: #fff;
+      transition: 0.2s;
       overflow: hidden;
-      h3{
-        height: 50px;
-        line-height: 50px;
+      h3 {
+        // min-height: 50px;
         margin: 0 0.5rem;
-        border-bottom: 1px solid rgba(0,0,0,0.4);
-        font-size: 1.4rem;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        font-size: 1.2rem;
         font-family: Arial, Helvetica, sans-serif;
       }
-      img{
+      img {
         max-width: 100%;
       }
-      p{
+      p {
         padding: 0.5rem;
         font-size: 0.9rem;
         font-family: Arial, Helvetica, sans-serif;
         color: #666;
-        a{
+        a {
           font-size: 0.9rem;
           font-family: Arial, Helvetica, sans-serif;
           font-weight: bold;
           color: $secondColor;
           text-decoration: none;
-          &:hover{
-            color: rgba(255,230,50,0.7);
+          &:hover {
+            color: rgba(255, 230, 50, 0.7);
+            transition: 0.1s;
           }
         }
       }
     }
-    div:first-of-type{
+    div:first-of-type {
       margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    section {
+      @include flex-mother(row, center, flex-start, wrap);
+      div {
+        width: 40%;
+        margin-top: 0;
+        margin-bottom: 50px;
+      }
+      div:first-of-type {
+        margin-top: 50px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 90%;
+    section {
+      @include flex-mother(row, space-around, flex-start, wrap);
+      div {
+        width: 28%;
+        margin: 0;
+        margin-bottom: 50px;
+      }
+      div:first-of-type {
+        margin-top: 0;
+      }
     }
   }
 }

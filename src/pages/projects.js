@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby';
 
 //Components
+import Head from '../components/head';
 import SingleProject from '../components/singleProject';
 
 //Styles
@@ -23,6 +24,7 @@ const Projects = () => {
               src
             }
           }
+          slug
         }
       }
     }
@@ -38,12 +40,15 @@ const Projects = () => {
     return projectList
   }
   return (
-    <main className={projectStyles.container}>
-      <h1>Realizacje</h1>
-      <section>
-        {renderProjects()}
-      </section>
-    </main>
+    <>
+      <Head titleSecond="realizacje" />
+      <main className={projectStyles.container}>
+        <h1>Realizacje</h1>
+        <section>
+          {renderProjects()}
+        </section>
+      </main>
+    </>
   );
 }
 

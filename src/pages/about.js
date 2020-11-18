@@ -13,7 +13,7 @@ const About = () => {
 
   return (
     <>
-      <Head titleSecond="about" />
+      <Head titleSecond="o nas" />
       <main className={aboutStyles.about}>
 
       </main>
