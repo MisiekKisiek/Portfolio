@@ -28,8 +28,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Comfortaa`,
-          `Comfortaa\:300,400,400i,700`
+          `Comfortaa\:300,400,400i,700`,
+          `Goldman\:800`
         ],
         display: 'swap'
       }

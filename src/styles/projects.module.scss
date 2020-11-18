@@ -80,10 +80,7 @@
       div {
         width: 40%;
         margin-top: 0;
-        margin-bottom: 50px;
-      }
-      div:first-of-type {
-        margin-top: 50px;
+        margin-bottom: 30px;
       }
     }
   }
@@ -95,12 +92,9 @@
     section {
       @include flex-mother(row, space-around, flex-start, wrap);
       div {
-        width: 28%;
+        width: 30%;
         margin: 0;
         margin-bottom: 50px;
-      }
-      div:first-of-type {
-        margin-top: 0;
       }
     }
   }
