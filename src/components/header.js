@@ -11,12 +11,12 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import headerStyles from '../styles/header.module.scss';
 
 //Context
-import AppContext from '../context/App.context'
+import AppContext from '../context/App.context';
 
 //Utils
 import gsap from 'gsap';
 
-const Header = () => {
+const Header = ({ curtine }) => {
 
 	const {
 		menu,
@@ -42,8 +42,6 @@ const Header = () => {
 		}
 	`)
 
-	const curtine = useRef(null);
-
 	const TRANSITION_LENGTH = 1.5
 
 	const exitTransition = {
@@ -60,6 +58,7 @@ const Header = () => {
 			gsap.to(curtine.current, 1, { autoAlpha: 0, display: 'none' });
 		},
 	}
+
 	return (
 		<header className={`${headerStyles.header}`}>
 			<div ref={curtine} className={headerStyles.curtine}>

@@ -5,7 +5,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const projectTemplate = path.resolve('./src/templates/projectTemplate.js');
   const res = await graphql(`
   query{
-    allContentfulWebpage{
+    allContentfulProjects{
       edges{
         node{
           slug
@@ -15,7 +15,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   }
   `)
 
-  res.data.allContentfulWebpage.edges.forEach(edge => {
+  res.data.allContentfulProjects.edges.forEach(edge => {
     createPage({
       component: projectTemplate,
       path: `/projects/${edge.node.slug}`,

@@ -11,7 +11,7 @@ import projectStyles from '../styles/projects.module.scss';
 const Projects = () => {
   const projects = useStaticQuery(graphql`
   {
-    allContentfulWebpage{
+    allContentfulProjects{
       edges{
         node{
           id
@@ -32,7 +32,7 @@ const Projects = () => {
   `)
 
   const renderProjects = () => {
-    const projectList = projects.allContentfulWebpage.edges.map(e => {
+    const projectList = projects.allContentfulProjects.edges.map(e => {
       return (
         <SingleProject node={e.node} key={e.node.id} />
       )

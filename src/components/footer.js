@@ -1,19 +1,51 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import TransitionLink from 'gatsby-plugin-transition-link';
+
+//FontAwesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
+//Utils
+import gsap from 'gsap';
 
 //Styles
 import footerStyles from '../styles/footer.module.scss';
 
+//Context
+import AppContext from '../context/App.context';
 
-const Footer = () => {
+
+const Footer = ({ curtine }) => {
+
+  const {
+    handleMenu,
+  } = useContext(AppContext);
+
+  const TRANSITION_LENGTH = 1.5
+
+  const exitTransition = {
+    length: TRANSITION_LENGTH,
+    trigger: async (e) => {
+      await gsap.to(curtine.current, 0.8, { autoAlpha: 1, display: 'block' });
+      handleMenu(e);
+    },
+  }
+
+  const entryTransition = {
+    delay: TRANSITION_LENGTH,
+    trigger: () => {
+      gsap.to(curtine.current, 1, { autoAlpha: 0, display: 'none' });
+    },
+  }
 
   const projects = useStaticQuery(graphql`
   {
-    allContentfulWebpage{
+    allContentfulProjects{
       edges{
         node{
-          projectName
+          id
+          shortName
           slug
         }
       }
@@ -22,9 +54,16 @@ const Footer = () => {
   `)
 
   const renderRealizationLinks = () => {
-    console.log();
-    const links = projects.allContentfulWebpage.edges.map(project => {
-      return <TransitionLink to="/">{project}</TransitionLink>
+    const links = projects.allContentfulProjects.edges.map(project => {
+      const { slug, shortName, id } = project.node;
+      return <TransitionLink
+        key={id}
+        to={`/projects/${slug}`}
+        exit={exitTransition}
+        entry={entryTransition}
+      >
+        {shortName}
+      </TransitionLink>
     })
     return links
   }
@@ -36,10 +75,10 @@ const Footer = () => {
           <section>
             <div>
               <span>Oferta</span>
-              {renderRealizationLinks()}
             </div>
             <div>
               <span>Realizacje</span>
+              {renderRealizationLinks()}
             </div>
           </section>
           <section>
@@ -51,7 +90,10 @@ const Footer = () => {
               <span>NIP: 123654987</span>
             </address>
           </section>
-          <section></section>
+          <section>
+            <span>Designed with <FontAwesomeIcon icon={faHeart} /> by:</span>
+            <a href="/">MisiekKisiek</a>
+          </section>
         </div>
       </footer>
     </>
