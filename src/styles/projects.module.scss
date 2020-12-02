@@ -12,22 +12,7 @@
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
     color: $secondColor;
-    &::after,
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 76%;
-      width: 30px;
-      height: 100px;
-      clip-path: polygon(20% 0, 100% 0%, 75% 100%, 0% 100%);
-      background-color: rgba(255, 255, 0, 0.7);
-    }
-    &::before {
-      left: calc(76% + 30px);
-      background-color: rgba(65, 105, 225, 0.7);
-    }
+    @include decoration-element();
   }
   section {
     div {

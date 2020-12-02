@@ -86,16 +86,16 @@ const Contact = () => {
 
   function sendEmail(e) {
     e.preventDefault();
-    // if (nameInput.current.value.length < 5) {
-    //   handleFormAlert("Nazwa musi mieć przynajmniej 5 znaków", alertTypes.wrong)
-    //   return
-    // } else if (!emailInput.current.value.includes("@") && !emailInput.current.value.includes(".")) {
-    //   handleFormAlert("Wprowadź prawidłowy adres e-mail", alertTypes.wrong)
-    //   return
-    // } else if (textInput.current.value.length < 10) {
-    //   handleFormAlert("Wiadomość musi mieć conajmniej 10 znaków", alertTypes.wrong)
-    //   return
-    // }
+    if (nameInput.current.value.length < 5) {
+      handleFormAlert("Nazwa musi mieć przynajmniej 5 znaków", alertTypes.wrong)
+      return
+    } else if (!emailInput.current.value.includes("@") && !emailInput.current.value.includes(".")) {
+      handleFormAlert("Wprowadź prawidłowy adres e-mail", alertTypes.wrong)
+      return
+    } else if (textInput.current.value.length < 10) {
+      handleFormAlert("Wiadomość musi mieć conajmniej 10 znaków", alertTypes.wrong)
+      return
+    }
 
 
 
@@ -116,7 +116,6 @@ const Contact = () => {
     //     }
     //   }
     // }, 500);
-    console.log(test)
 
     handleFormAlert("Wysyłanie");
     emailjs.sendForm('gmail', 'template_test', e.target, 'user_qZY7FllS46aSyJuEosQN8')
