@@ -25,3 +25,29 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
+
+module.exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  const offerTemplate = path.resolve('./src/templates/offerTemplate.js');
+  const res = await graphql(`
+  query{
+    allContentfulOffers{
+      edges{
+        node{
+          slug
+        }
+      }
+    }
+  }
+  `)
+
+  res.data.allContentfulOffers.edges.forEach(edge => {
+    createPage({
+      component: offerTemplate,
+      path: `/offer/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug
+      }
+    })
+  })
+}

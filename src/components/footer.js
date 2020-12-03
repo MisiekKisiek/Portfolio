@@ -39,7 +39,7 @@ const Footer = ({ curtine }) => {
     },
   }
 
-  const projects = useStaticQuery(graphql`
+  const projectsAndOffers = useStaticQuery(graphql`
   {
     allContentfulProjects{
       edges{
@@ -50,11 +50,21 @@ const Footer = ({ curtine }) => {
         }
       }
     }
+    allContentfulOffers{
+      edges{
+        node{
+          id
+          offerName
+          slug
+        }
+      }
+    }
   }
   `)
 
+
   const renderRealizationLinks = () => {
-    const links = projects.allContentfulProjects.edges.map(project => {
+    const links = projectsAndOffers.allContentfulProjects.edges.map(project => {
       const { slug, shortName, id } = project.node;
       return <TransitionLink
         key={id}
@@ -68,6 +78,21 @@ const Footer = ({ curtine }) => {
     return links
   }
 
+  const renderOfferLinks = () => {
+    const links = projectsAndOffers.allContentfulOffers.edges.map(offer => {
+      const { slug, id, offerName } = offer.node;
+      return <TransitionLink
+        key={id}
+        to={`/offer/${slug}`}
+        exit={exitTransition}
+        entry={entryTransition}
+      >
+        {offerName}
+      </TransitionLink>
+    })
+    return links
+  }
+
   return (
     <>
       <footer className={footerStyles.footer}>
@@ -75,6 +100,7 @@ const Footer = ({ curtine }) => {
           <section>
             <div>
               <span>Oferta</span>
+              {renderOfferLinks()}
             </div>
             <div>
               <span>Realizacje</span>
