@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from 'react';
+import React, { useRef, cloneElement } from 'react';
 
 //Components
 import Header from '../components/header';
@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
                 <Header
                     curtine={curtine}
                 />
-                {children}
+                {cloneElement(children,{curtine: curtine})}
                 <Footer
                     curtine={curtine}
                 />

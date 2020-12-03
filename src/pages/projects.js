@@ -9,6 +9,7 @@ import SingleProject from '../components/singleProject';
 import projectStyles from '../styles/projects.module.scss';
 
 const Projects = () => {
+  
   const projects = useStaticQuery(graphql`
   {
     allContentfulProjects{
