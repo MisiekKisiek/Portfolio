@@ -75,6 +75,7 @@
     height: 100%;
     clip-path: polygon(20% 0, 100% 0%, 75% 100%, 0% 100%);
     background-color: rgba(255, 255, 0, 0.7);
+    z-index: -1;
   }
   &::before {
     left: calc(#{$left} + 30px);
@@ -82,7 +83,7 @@
   }
 }
 
-@mixin decoration-title($top:0, $left:88%){
+@mixin decoration-title($top1:10%, $left1:88%,$color1:rgba(65, 105, 225, 0.55),$top2:-10%, $left2:-5%, $color2:rgba(255, 255, 0, 0.55)){
   @include flex-mother(row,center,center);
   height: 90px;
   h2{
@@ -94,20 +95,20 @@
       content:"";
       display: block;
       position: absolute;
-      top:10%;
-      left:88%;
+      top:$top1;
+      left:$left1;
       width: 40px;
       height: 40px;
       border-radius: 5px;
-      background-color: rgba(65, 105, 225, 0.55);
+      background-color: $color1;
       z-index: -2;
     }
     &::before{
-      top:-10%;
-      left:-5%;
+      top:$top2;
+      left:$left2;
       width: 20px;
       height: 20px;
-      background-color: rgba(255, 255, 0, 0.55);
+      background-color: $color2;
     }
   }
 }

@@ -10,7 +10,7 @@ import contactStyles from '../styles/contact.module.scss';
 
 const Contact = () => {
 
-  const alertTypes = {
+  const alertColors = {
     wrong: "red",
     correct: "green",
     neutral: "gray"
@@ -74,12 +74,12 @@ const Contact = () => {
   }
 
   const handleFormAlert = (message, type) => {
-    if (type === alertTypes.correct) {
-      spanFormAlert.current.style.color = alertTypes.correct
-    } else if (type === alertTypes.wrong) {
-      spanFormAlert.current.style.color = alertTypes.wrong
-    } else if (type === alertTypes.neutral) {
-      spanFormAlert.current.style.color = alertTypes.neutral
+    if (type === alertColors.correct) {
+      spanFormAlert.current.style.color = alertColors.correct
+    } else if (type === alertColors.wrong) {
+      spanFormAlert.current.style.color = alertColors.wrong
+    } else if (type === alertColors.neutral) {
+      spanFormAlert.current.style.color = alertColors.neutral
     }
     setformAlert(message);
   }
@@ -87,47 +87,25 @@ const Contact = () => {
   function sendEmail(e) {
     e.preventDefault();
     if (nameInput.current.value.length < 5) {
-      handleFormAlert("Nazwa musi mieć przynajmniej 5 znaków", alertTypes.wrong)
+      handleFormAlert("Nazwa musi mieć przynajmniej 5 znaków", alertColors.wrong)
       return
     } else if (!emailInput.current.value.includes("@") && !emailInput.current.value.includes(".")) {
-      handleFormAlert("Wprowadź prawidłowy adres e-mail", alertTypes.wrong)
+      handleFormAlert("Wprowadź prawidłowy adres e-mail", alertColors.wrong)
       return
     } else if (textInput.current.value.length < 10) {
-      handleFormAlert("Wiadomość musi mieć conajmniej 10 znaków", alertTypes.wrong)
+      handleFormAlert("Wiadomość musi mieć conajmniej 10 znaków", alertColors.wrong)
       return
     }
-
-
-
-    // const interval = setInterval(() => {
-
-    //   if (!formAlert.includes("Wysyłanie")) {
-    //     handleFormAlert("Wysyłanie", alertTypes.neutral);
-    //     console.log(formAlert);
-    //   } else {
-    //     if (formAlert.includes("Wysyłanie...")) {
-    //       const formAlertValue = "Wysyłanie";
-    //       console.log(formAlertValue);
-    //       handleFormAlert(formAlertValue);
-    //     } else {
-    //       const formAlertValue = formAlert + ".";
-    //       console.log(formAlertValue);
-    //       handleFormAlert(formAlertValue);
-    //     }
-    //   }
-    // }, 500);
 
     handleFormAlert("Wysyłanie");
     emailjs.sendForm('gmail', 'template_test', e.target, 'user_qZY7FllS46aSyJuEosQN8')
       .then((result) => {
         console.log(result.text);
-        // clearInterval(interval);
         handleSubmitContactForm();
-        handleFormAlert("Wiadomość została wysłana poprawnie", alertTypes.correct);
+        handleFormAlert("Wiadomość została wysłana poprawnie", alertColors.correct);
       }, (error) => {
         console.log(error.text);
-        // clearInterval(interval);
-        handleFormAlert("Wiadomość nie została przesłana", alertTypes.correct);
+        handleFormAlert("Wiadomość nie została przesłana", alertColors.correct);
       });
   }
 

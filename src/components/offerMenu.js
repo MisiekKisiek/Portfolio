@@ -1,7 +1,10 @@
 import React from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 
-const OfferMenu = () => {
+//Styles
+import offerStyles from '../styles/offer.module.scss';
+
+const OfferMenu = ({ title }) => {
 
   const offers = useStaticQuery(graphql`
   {
@@ -23,9 +26,9 @@ const OfferMenu = () => {
   `)
 
   const menuItems = offers.allContentfulOffers.edges.map(item => {
-    const { offerName, slug } = item.node;
+    const { offerName, slug, id } = item.node;
     return (
-      <li>
+      <li key={id} className={title && title === offerName ? offerStyles.activeListItem : ""}>
         <Link to={`/offer/${slug}`}>
           {offerName}
         </Link>
@@ -34,9 +37,11 @@ const OfferMenu = () => {
   })
 
   return (
-    <ul>
-      {menuItems}
-    </ul>
+    <nav className={offerStyles.menu}>
+      <ul>
+        {menuItems}
+      </ul>
+    </nav>
   );
 }
 

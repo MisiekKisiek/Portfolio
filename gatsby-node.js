@@ -20,7 +20,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
       component: projectTemplate,
       path: `/projects/${edge.node.slug}`,
       context: {
-        slug: edge.node.slug
+        slug: edge.node.slug,
       }
     })
   })
@@ -35,6 +35,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
       edges{
         node{
           slug
+          offerName
         }
       }
     }
@@ -46,7 +47,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
       component: offerTemplate,
       path: `/offer/${edge.node.slug}`,
       context: {
-        slug: edge.node.slug
+        slug: edge.node.slug,
+        offerName: edge.node.offerName
       }
     })
   })

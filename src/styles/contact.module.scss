@@ -28,9 +28,12 @@
       width: 100%;
       &:first-of-type {
         span{
+          @include flex-mother(row,center,flex-start);
           position: absolute;
-          top:10px;
+          top:0px;
           left:50%;
+          margin-top: 5px;
+          width: 100%;
           transform: translate(-50%,0);
           font-size: 0.6rem;
           color: red;

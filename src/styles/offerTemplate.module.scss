@@ -1,0 +1,29 @@
+@import "./Variables";
+@import "./Mixins";
+
+.main{
+  max-width: 1024px;
+  margin: auto;
+}
+
+.title {
+  @include flex-mother(row,center,center);
+  @include decoration-element($left: 80%);
+  position: relative;
+  min-height: 100px;
+  padding: 10px 55px;
+  // line-height: 100px;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  word-wrap: break-word;
+  color: $secondColor;
+}
+
+@media (min-width: 700px){
+  .main {
+    >div{
+      @include flex-mother(row);
+      border-top: 1px solid rgba(240, 240, 240, 1);
+    }
+  }
+}

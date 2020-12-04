@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext } from 'react';
 import TransitionLink from 'gatsby-plugin-transition-link';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from "gatsby-image";
@@ -42,12 +42,12 @@ const Header = ({ curtine }) => {
 		}
 	`)
 
-	const TRANSITION_LENGTH = 1.5
+	const TRANSITION_LENGTH = 1
 
 	const exitTransition = {
 		length: TRANSITION_LENGTH,
 		trigger: async (e) => {
-			await gsap.to(curtine.current, 0.8, { autoAlpha: 1, display: 'block' });
+			await gsap.to(curtine.current, 0.5, { autoAlpha: 1, display: 'block' });
 			handleMenu(e);
 		},
 	}

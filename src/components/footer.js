@@ -22,7 +22,7 @@ const Footer = ({ curtine }) => {
     handleMenu,
   } = useContext(AppContext);
 
-  const TRANSITION_LENGTH = 1.5
+  const TRANSITION_LENGTH = 1
 
   const exitTransition = {
     length: TRANSITION_LENGTH,
