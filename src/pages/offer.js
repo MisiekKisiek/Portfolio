@@ -4,10 +4,13 @@ import Img from "gatsby-image";
 
 //Components
 import Head from '../components/head';
-import OfferMenu from '../components/offerMenu';
+import AsideMenu from '../components/asideMenu';
 
 //Styles
 import offerStyles from '../styles/offer.module.scss';
+
+//Utils
+import paths from '../utils/paths';
 
 const Offer = (props) => {
 
@@ -17,7 +20,7 @@ const Offer = (props) => {
       edges{
         node{
           id
-          offerName
+          name
           image { 
             fluid(maxWidth: 800){
               src
@@ -25,6 +28,9 @@ const Offer = (props) => {
           }
           slug
         }
+      }
+      pageInfo{
+        currentPage
       }
     }
     offerPic: file(relativePath: { eq: "offer-pic.jpg" }) {
@@ -43,28 +49,28 @@ const Offer = (props) => {
       <main className={offerStyles.main}>
         <h1 className={offerStyles.title}>Nasza oferta</h1>
         <div>
-          <OfferMenu />
+          <AsideMenu query={offers.allContentfulOffers} path={paths.offer}/>
           <section className={offerStyles.section}>
             <div>
               <h2>
                 Zakres możliwości
               </h2>
             </div>
-            <p>
+            <article>
               <span>
                 Oferujemy szeroki zakres usług poczynając od <strong>analiz konstrukcyjnych oraz środowiskowych</strong>, poprzez <strong>pomoc prawną m.in. dla legalizacji samowoli budowlanych</strong>, do szerokiego zakresu <strong>realizacji z dziedziny budownictwa hydrotechnicznego</strong>.
               </span>
               <Img fluid={offers.offerPic.childImageSharp.fluid} />
-            </p>
+            </article>
             <div>
               <h2>
                 Najpopularniejsze zlecenia
               </h2>
             </div>
-            <p>
+            <article>
               <Img fluid={offers.offerPic.childImageSharp.fluid} />
               <span>W świetle zmian w prawie dot. legalizacji samowoli budowlanych jesteśmy przygotowani na podjęcie się najbardziej skomplikowanych zleceń dotyczących tej materii. Doświadczenie w tej dziedzinie oraz gruntowna analiza przepisów i nowinek pozwala nam na profesjonalne, szybkie i skuteczne działania na rzecz klienta.</span>
-            </p>
+            </article>
           </section>
         </div>
       </main>

@@ -47,7 +47,7 @@
   input:hover + label,
   input:focus + label,
   textarea:hover + label,
-  textarea:focus + label{
+  textarea:focus + label {
     top: 0;
     transform: translate(0, -100%);
     font-size: 0.8rem;
@@ -63,7 +63,7 @@
   }
 }
 
-@mixin decoration-element($top:0, $left:76%){
+@mixin decoration-element($top: 0, $left: 76%) {
   &::after,
   &::before {
     content: "";
@@ -83,29 +83,39 @@
   }
 }
 
-@mixin decoration-title($top1:10%, $left1:88%,$color1:rgba(65, 105, 225, 0.55),$top2:-10%, $left2:-5%, $color2:rgba(255, 255, 0, 0.55)){
-  @include flex-mother(row,center,center);
+@mixin decoration-title(
+  $top1: 10%,
+  $left1: 88%,
+  $color1: rgba(65, 105, 225, 0.55),
+  $top2: -10%,
+  $left2: -5%,
+  $color2: rgba(255, 255, 0, 0.55)
+) {
+  @include flex-mother(row, center, center);
   height: 90px;
-  h2{
+  h2,
+  h3 {
     position: relative;
     text-align: center;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
     color: #555;
-    &::after, &::before{
-      content:"";
+    &::after,
+    &::before {
+      content: "";
       display: block;
       position: absolute;
-      top:$top1;
-      left:$left1;
+      top: $top1;
+      left: $left1;
       width: 40px;
       height: 40px;
       border-radius: 5px;
       background-color: $color1;
       z-index: -2;
     }
-    &::before{
-      top:$top2;
-      left:$left2;
+    &::before {
+      top: $top2;
+      left: $left2;
       width: 20px;
       height: 20px;
       background-color: $color2;

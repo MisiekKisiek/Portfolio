@@ -2,12 +2,12 @@ import React from 'react';
 import TransitionLink from 'gatsby-plugin-transition-link';
 
 const SingleProject = (props) => {
-  const { projectName, projectDescription, image, slug } = props.node;
+  const { name, description, image, slug } = props.node;
   const img = image ? <img src={`${image[0].fluid.src}`} /> : null;
-  const descriptionSliced = projectDescription.projectDescription.slice(0, 200);
+  const descriptionSliced = description?description.description.slice(0, 200):null
   return (<div>
     {img}
-    <h3>{projectName}</h3>
+    <h3>{name}</h3>
     <p>{descriptionSliced}<TransitionLink
       to={`${slug}`} >...więcej</TransitionLink>
     </p>

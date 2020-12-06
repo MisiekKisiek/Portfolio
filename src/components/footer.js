@@ -54,7 +54,7 @@ const Footer = ({ curtine }) => {
       edges{
         node{
           id
-          offerName
+          name
           slug
         }
       }
@@ -80,14 +80,14 @@ const Footer = ({ curtine }) => {
 
   const renderOfferLinks = () => {
     const links = projectsAndOffers.allContentfulOffers.edges.map(offer => {
-      const { slug, id, offerName } = offer.node;
+      const { slug, id, name } = offer.node;
       return <TransitionLink
         key={id}
         to={`/offer/${slug}`}
         exit={exitTransition}
         entry={entryTransition}
       >
-        {offerName}
+        {name}
       </TransitionLink>
     })
     return links

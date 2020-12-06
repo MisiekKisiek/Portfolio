@@ -3,11 +3,11 @@
 
 .main {
   max-width: 1024px;
-  margin: auto;
+  margin: 0 auto 15px auto;
 }
 
 .title {
-  @include flex-mother(row,center,center);
+  @include flex-mother(row, center, center);
   @include decoration-element($left: 80%);
   position: relative;
   min-height: 100px;
@@ -19,52 +19,32 @@
   color: $secondColor;
 }
 
-.menu{
-  ul{
-    @include flex-mother(column, center);
-    list-style-type: none;
-    border-top: 4px solid rgba(240, 240, 240, 1);
-    background-color: rgba(252, 252, 252, 1);
-    li{
-      padding: 10px 8%;
-      border-bottom: 1px solid rgba(240, 240, 240, 1);
-      a{
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-        text-decoration: none;
-        color: #333;
-        transition: .2s;
-        cursor: pointer;
-        &:hover{
-          color: $secondColor;
-        }
-      }
-    }
-  }
-}
-
-.active-list-item{
-  font-weight: bold;
-}
-
-.section{
-  >div{
+.section {
+  > div {
     @include decoration-title();
-    &:nth-child(odd){
-      @include decoration-title(-50%,88%,rgba(255, 255, 0, 0.55),40%,-3%,rgba(65, 105, 225, 0.55));
+    &:nth-child(odd) {
+      @include decoration-title(
+        -50%,
+        88%,
+        rgba(255, 255, 0, 0.55),
+        40%,
+        -3%,
+        rgba(65, 105, 225, 0.55)
+      );
     }
-    &:nth-child(1){
+    &:nth-child(1) {
       @include decoration-title();
     }
   }
-  p{
+  article {
     line-height: 1.5rem;
     margin: 5px 30px;
     padding: 17px 0 0 0;
     border-top: 1px solid rgba(240, 240, 240, 1);
     text-align: justify;
     text-indent: 40px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    div{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    div {
       height: 240px;
       margin: 15px 0;
       border-radius: 5px;
@@ -72,32 +52,25 @@
   }
 }
 
-@media (min-width: 700px){
+@media (min-width: 700px) {
   .main {
-    >div{
+    > div {
       @include flex-mother(row);
       border-top: 1px solid rgba(240, 240, 240, 1);
     }
   }
-  .menu{
-    min-width: 260px;
-    max-width: 260px;
-    ul{
-      border-top: none;
-    }
-  }
 }
 
-@media (min-width: 850px){
-  .section{
-    p{
+@media (min-width: 850px) {
+  .section {
+    article {
       @include flex-mother();
       padding-top: 5px;
       border-top: none;
-      span{
+      span {
         flex-basis: 50%;
       }
-      div{
+      div {
         width: 50%;
         height: auto;
         max-height: 260px;

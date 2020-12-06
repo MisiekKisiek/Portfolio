@@ -14,58 +14,84 @@
     color: $secondColor;
     @include decoration-element();
   }
-  section {
-    div {
-      width: 85%;
-      margin: 20px auto;
-      border-radius: 5px;
-      box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.04);
-      background-color: #fff;
-      transition: 0.2s;
-      overflow: hidden;
-      h3 {
-        // min-height: 50px;
-        margin: 0 0.5rem;
-        padding: 10px 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-        font-size: 1.2rem;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      img {
-        max-width: 100%;
-      }
-      p {
-        padding: 0.5rem;
-        font-size: 0.9rem;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #666;
-        a {
+  > div {
+    @include flex-mother(column);
+    section {
+      margin: 30px 0 15px 0;
+      > div {
+        width: 85%;
+        margin: 20px auto;
+        border-radius: 5px;
+        box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.04);
+        background-color: #fff;
+        transition: 0.2s;
+        overflow: hidden;
+        h3 {
+          margin: 0 0.5rem;
+          padding: 10px 0;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+          font-size: 1.2rem;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        img {
+          max-width: 100%;
+        }
+        p {
+          padding: 0.5rem;
           font-size: 0.9rem;
           font-family: Arial, Helvetica, sans-serif;
-          font-weight: bold;
-          color: $secondColor;
-          text-decoration: none;
-          &:hover {
-            color: rgba(255, 230, 50, 0.7);
-            transition: 0.1s;
+          color: #666;
+          a {
+            font-size: 0.9rem;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: $secondColor;
+            text-decoration: none;
+            &:hover {
+              color: rgba(255, 230, 50, 0.7);
+              transition: 0.1s;
+            }
           }
         }
       }
-    }
-    div:first-of-type {
-      margin-top: 0;
+      > div:first-of-type {
+        margin-top: 0;
+      }
     }
   }
 }
 
 @media (min-width: 600px) {
   .container {
-    section {
-      @include flex-mother(row, center, flex-start, wrap);
-      div {
-        width: 40%;
-        margin-top: 0;
-        margin-bottom: 30px;
+    > div {
+      h1 {
+      }
+      section {
+        @include flex-mother(row, center, flex-start, wrap);
+        > div {
+          width: 40%;
+          margin-top: 0;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .container {
+    > div {
+      @include flex-mother(row);
+      border-top: 1px solid rgba(240, 240, 240, 1);
+      h1 {
+      }
+      section {
+        margin: 20px 0 15px 0;
+        > div {
+          width: 40%;
+          margin-top: 0;
+          margin-bottom: 30px;
+        }
       }
     }
   }
@@ -74,12 +100,14 @@
 @media (min-width: 1024px) {
   .container {
     width: 90%;
-    section {
-      @include flex-mother(row, space-around, flex-start, wrap);
-      div {
-        width: 30%;
-        margin: 0;
-        margin-bottom: 50px;
+    > div {
+      section {
+        @include flex-mother(row, space-around, flex-start, wrap);
+        > div {
+          width: 45%;
+          margin: 0;
+          margin-bottom: 50px;
+        }
       }
     }
   }

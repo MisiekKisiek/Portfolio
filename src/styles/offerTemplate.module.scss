@@ -1,13 +1,13 @@
 @import "./Variables";
 @import "./Mixins";
 
-.main{
+.main {
   max-width: 1024px;
   margin: auto;
 }
 
 .title {
-  @include flex-mother(row,center,center);
+  @include flex-mother(row, center, center);
   @include decoration-element($left: 80%);
   position: relative;
   min-height: 100px;
@@ -19,11 +19,55 @@
   color: $secondColor;
 }
 
-@media (min-width: 700px){
+.article {
+  padding: 15px 20px 70px 20px;
+  line-height: 1.4rem;
+  > span {
+    width: 100%;
+    @include decoration-title($left1: 92%);
+  }
+  > div {
+    margin: 25px 0 30px 0;
+  }
+  p {
+    h3 {
+      margin: 10px 0;
+      font-size: 1.4rem;
+      color: #444;
+    }
+    span {
+      font-family: Arial, Helvetica, sans-serif;
+      ul {
+        padding-left: 30px;
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
   .main {
-    >div{
+    > div {
       @include flex-mother(row);
       border-top: 1px solid rgba(240, 240, 240, 1);
+    }
+  }
+  .article {
+    > div {
+      margin: 25px 0;
+      width: 100%;
+    }
+    p {
+      flex-basis: 50%;
+      h3 {
+        font-size: 1.4rem;
+        color: #444;
+      }
+      span {
+        font-family: Arial, Helvetica, sans-serif;
+        ul {
+          padding-left: 30px;
+        }
+      }
     }
   }
 }

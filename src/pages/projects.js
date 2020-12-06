@@ -4,9 +4,13 @@ import { graphql, useStaticQuery } from 'gatsby';
 //Components
 import Head from '../components/head';
 import SingleProject from '../components/singleProject';
+import AsideMenu from '../components/asideMenu';
 
 //Styles
 import projectStyles from '../styles/projects.module.scss';
+
+//Utils
+import paths from '../utils/paths';
 
 const Projects = () => {
   
@@ -16,9 +20,9 @@ const Projects = () => {
       edges{
         node{
           id
-          projectName
-          projectDescription{
-            projectDescription
+          name
+          description{
+            description
           }
           image { 
             fluid(maxWidth: 800){
@@ -45,9 +49,12 @@ const Projects = () => {
       <Head titleSecond="realizacje" />
       <main className={projectStyles.container}>
         <h1>Realizacje</h1>
-        <section>
-          {renderProjects()}
-        </section>
+        <div>
+          <AsideMenu query={projects.allContentfulProjects} path={paths.project}/>
+          <section>
+            {renderProjects()}
+          </section>
+        </div>
       </main>
     </>
   );

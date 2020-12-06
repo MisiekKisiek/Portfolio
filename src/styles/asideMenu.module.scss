@@ -1,0 +1,40 @@
+@import "./Variables";
+@import "./Mixins";
+
+.menu {
+  ul {
+    @include flex-mother(column, center);
+    list-style-type: none;
+    border-top: 4px solid rgba(240, 240, 240, 1);
+    background-color: rgba(252, 252, 252, 1);
+    li {
+      padding: 10px 8%;
+      border-bottom: 1px solid rgba(240, 240, 240, 1);
+      a {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        text-decoration: none;
+        color: #333;
+        transition: 0.2s;
+        cursor: pointer;
+        &:hover {
+          color: $secondColor;
+        }
+      }
+    }
+  }
+}
+
+.active-list-item {
+  font-weight: bold;
+}
+
+@media (min-width: 700px) {
+  .menu {
+    min-width: 300px;
+    max-width: 300px;
+    ul {
+      border-top: none;
+    }
+  }
+}
