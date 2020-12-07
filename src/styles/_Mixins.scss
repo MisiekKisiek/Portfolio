@@ -85,10 +85,10 @@
 
 @mixin decoration-title(
   $top1: 10%,
-  $left1: 88%,
+  $right1: -3%,
   $color1: rgba(65, 105, 225, 0.55),
   $top2: -10%,
-  $left2: -5%,
+  $left2: 0%,
   $color2: rgba(255, 255, 0, 0.55)
 ) {
   @include flex-mother(row, center, center);
@@ -106,7 +106,7 @@
       display: block;
       position: absolute;
       top: $top1;
-      left: $left1;
+      right: $right1;
       width: 40px;
       height: 40px;
       border-radius: 5px;

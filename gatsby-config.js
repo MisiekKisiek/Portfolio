@@ -2,8 +2,8 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: "MiśkiKiśki",
-    author: "misiekkisiek",
+    title: "SmartHydro",
+    author: "MisiekKisiek",
   },
   plugins: [
     {

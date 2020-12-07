@@ -67,6 +67,7 @@
     list-style-type: none;
     opacity: 0;
     transition: 0.2s;
+    overflow: scroll;
     li {
       width: 75%;
       margin: auto;
@@ -132,6 +133,7 @@
       @include flex-mother(row, flex-end, center);
       opacity: 1;
       width: 100%;
+      overflow: hidden;
       li {
         @include flex-mother(row, center, center);
         width: auto;

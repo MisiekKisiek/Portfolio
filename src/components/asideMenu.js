@@ -5,16 +5,16 @@ import { Link } from 'gatsby';
 import menuStyles from '../styles/asideMenu.module.scss';
 
 const AsideMenu = ({ title, query, path }) => {
-  const menuItems = query?query.edges.map(item => {
+  const menuItems = query ? query.edges.map(item => {
     const { name, slug, id } = item.node;
     return (
       <li key={id} className={title && title === name ? menuStyles.activeListItem : ""}>
-        <Link to={`/${path?path:""}/${slug}`}>
+        <Link to={path ? `/${path}/${slug}` : ""}>
           {name}
         </Link>
       </li>
     )
-  }):null;
+  }) : null;
 
   return (
     <nav className={menuStyles.menu}>

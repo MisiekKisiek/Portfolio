@@ -142,7 +142,7 @@
       padding: 35px 100px;
     }
     > div {
-      &:after {
+      &:after, &:before {
         content: "";
         display: block;
         position: absolute;
@@ -152,23 +152,18 @@
         height: 100px;
         transform: translate(30px, 30px);
         border-radius: 5px;
-        box-shadow: 0 0 1px 1px rgba(133, 154, 214, 0.8);
-        background-color: rgba(133, 154, 214, 0.8);
+        box-shadow: 0 0 1px 1px rgba(65, 105, 225, 0.55);
+        background-color: rgba(65, 105, 225, 0.55);
         z-index: -1;
       }
       &:before {
-        content: "";
-        display: block;
-        position: absolute;
         top: 0;
         left: 0;
         width: 70px;
         height: 130px;
         transform: translate(-30px, 80px);
-        border-radius: 5px;
-        box-shadow: 0 0 1px 1px rgba(133, 154, 214, 0.8);
-        background-color: rgba(133, 154, 214, 0.8);
-        z-index: -1;
+        box-shadow: 0 0 1px 1px rgba(255, 255, 0, 0.55);
+        background-color: rgba(255, 255, 0, 0.55);
       }
   }
 }

@@ -3,4 +3,26 @@
 
 .about {
   max-width: 1024px;
+  margin: 0 auto 15px auto;
+}
+
+.title {
+  @include flex-mother(row, center, center);
+  @include decoration-element($left: 80%);
+  position: relative;
+  min-height: 100px;
+  padding: 10px 55px;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  word-wrap: break-word;
+  color: $secondColor;
+}
+
+.section{
+  padding: 20px;
+  border-top: 1px solid rgba(240, 240, 240, 1);
+  >div{
+    width: 100%;
+    border-radius: 5px;
+  }
 }

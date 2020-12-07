@@ -59,6 +59,11 @@ const Footer = ({ curtine }) => {
         }
       }
     }
+    site{
+      siteMetadata{
+          author
+      }
+    }
   }
   `)
 
@@ -118,7 +123,7 @@ const Footer = ({ curtine }) => {
           </section>
           <section>
             <span>Designed with <FontAwesomeIcon icon={faHeart} /> by:</span>
-            <a href="/">MisiekKisiek</a>
+            <a href="/">{projectsAndOffers.site.siteMetadata.author}</a>
           </section>
         </div>
       </footer>

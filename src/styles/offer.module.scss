@@ -12,7 +12,6 @@
   position: relative;
   min-height: 100px;
   padding: 10px 55px;
-  // line-height: 100px;
   text-align: center;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   word-wrap: break-word;
@@ -20,12 +19,13 @@
 }
 
 .section {
+  padding-bottom: 15px;
   > div {
     @include decoration-title();
     &:nth-child(odd) {
       @include decoration-title(
         -50%,
-        88%,
+        0%,
         rgba(255, 255, 0, 0.55),
         40%,
         -3%,
@@ -37,6 +37,7 @@
     }
   }
   article {
+    @include flex-mother(column);
     line-height: 1.5rem;
     margin: 5px 30px;
     padding: 17px 0 0 0;
@@ -46,7 +47,7 @@
     font-family: Georgia, "Times New Roman", Times, serif;
     div {
       height: 240px;
-      margin: 15px 0;
+      margin-top: 15px;
       border-radius: 5px;
     }
   }
@@ -63,6 +64,7 @@
 
 @media (min-width: 850px) {
   .section {
+    padding-bottom: 0;
     article {
       @include flex-mother();
       padding-top: 5px;
@@ -75,6 +77,9 @@
         height: auto;
         max-height: 260px;
         margin: 0 20px;
+      }
+      &:nth-child(2){
+        @include flex-mother(row-reverse);
       }
     }
   }

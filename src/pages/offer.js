@@ -49,7 +49,7 @@ const Offer = (props) => {
       <main className={offerStyles.main}>
         <h1 className={offerStyles.title}>Nasza oferta</h1>
         <div>
-          <AsideMenu query={offers.allContentfulOffers} path={paths.offer}/>
+          <AsideMenu query={offers.allContentfulOffers} path={paths.offer} />
           <section className={offerStyles.section}>
             <div>
               <h2>
@@ -68,8 +68,8 @@ const Offer = (props) => {
               </h2>
             </div>
             <article>
-              <Img fluid={offers.offerPic.childImageSharp.fluid} />
               <span>W świetle zmian w prawie dot. legalizacji samowoli budowlanych jesteśmy przygotowani na podjęcie się najbardziej skomplikowanych zleceń dotyczących tej materii. Doświadczenie w tej dziedzinie oraz gruntowna analiza przepisów i nowinek pozwala nam na profesjonalne, szybkie i skuteczne działania na rzecz klienta.</span>
+              <Img fluid={offers.offerPic.childImageSharp.fluid} />
             </article>
           </section>
         </div>

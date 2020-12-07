@@ -10,7 +10,9 @@ import mainStyles from '../styles/main.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-const Main = () => {
+const Main = (props) => {
+
+  console.log(props.dupa)
 
   const secondSection = useRef(null);
 

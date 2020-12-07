@@ -13,7 +13,7 @@ import projectStyles from '../styles/projects.module.scss';
 import paths from '../utils/paths';
 
 const Projects = () => {
-  
+
   const projects = useStaticQuery(graphql`
   {
     allContentfulProjects{
@@ -22,7 +22,12 @@ const Projects = () => {
           id
           name
           description{
-            description
+            json
+            content{
+              content{
+                value
+              }
+            }
           }
           image { 
             fluid(maxWidth: 800){
@@ -50,7 +55,7 @@ const Projects = () => {
       <main className={projectStyles.container}>
         <h1>Realizacje</h1>
         <div>
-          <AsideMenu query={projects.allContentfulProjects} path={paths.project}/>
+          <AsideMenu query={projects.allContentfulProjects} path={paths.project} />
           <section>
             {renderProjects()}
           </section>

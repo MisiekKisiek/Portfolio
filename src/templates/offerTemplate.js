@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Img from "gatsby-image";
 
 //Components
@@ -8,7 +8,7 @@ import Head from '../components/head';
 import AsideMenu from '../components/asideMenu';
 
 //Styles
-import offerTemplateStyles from '../styles/offerTemplate.module.scss';
+import templateStyles from '../styles/template.module.scss';
 
 //Utils
 import paths from '../utils/paths';
@@ -18,16 +18,17 @@ export const query = graphql`
     contentfulOffers(slug: {eq: $slug}){
       slug
       name
-      description{
+      services{
         json
       }
-      services{
+      description{
         json
       }
       image { 
         fluid{
           ...GatsbyContentfulFluid
         }
+        title
       }
     }
     allContentfulOffers{
@@ -35,11 +36,6 @@ export const query = graphql`
         node{
           id
           name
-          image { 
-            fluid(maxWidth: 800){
-              src
-            }
-          }
           slug
         }
       }
@@ -53,22 +49,18 @@ const OfferTemplate = (props) => {
   const { slug, name, description, services, image } = props.data.contentfulOffers
 
   const options = {
-    renderNode: {
-      // "embedded-asset-block": (node) => {
-      //   const alt = node.data.target.fields.title('en-US');
-      //   const url = node.data.target.fields.fields('en-US').url;
-      //   return <img url={url} alt={alt}/>
-      // }
-    }
+    renderNode: {}
   }
+
+  console.log(props)
 
   return (<>
     <Head titleSecond={slug} />
-    <main className={offerTemplateStyles.main}>
-      <h1 className={offerTemplateStyles.title}>Nasza oferta</h1>
+    <main className={templateStyles.main}>
+      <h1 className={templateStyles.title}>Nasza oferta</h1>
       <div>
-        <AsideMenu title={name} query={props.data.allContentfulOffers} path={paths.offer}/>
-        <article className={offerTemplateStyles.article}>
+        <AsideMenu title={name} query={props.data.allContentfulOffers} path={paths.offer} />
+        <article className={templateStyles.article}>
           <span>
             <h2>
               {name}
@@ -79,16 +71,17 @@ const OfferTemplate = (props) => {
               {documentToReactComponents(description.json, options)}
             </span>
           </p>
-          <Img fluid={image.fluid}/>
+          <Img fluid={image.fluid} />
+          <span>Obraz: {image.title}</span>
           <p>
             <h3>Główny zakres usług:</h3>
             <span>
-              {documentToReactComponents(services.json, options)}  
+              {documentToReactComponents(services.json, options)}
             </span>
           </p>
         </article>
       </div>
-      
+
     </main>
   </>);
 }
