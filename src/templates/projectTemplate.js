@@ -56,18 +56,18 @@ const Project = (props) => {
         <div>
           <AsideMenu title={name} query={props.data.allContentfulProjects} path={paths.project} />
           <article className={templateStyles.article}>
-            <span>
+            <div className={templateStyles.secondTitle}>
               <h2>
                 {name}
               </h2>
-            </span>
-            <p>
-              <span>
-                {documentToReactComponents(description.json, options)}
-              </span>
-            </p>
-            <Img fluid={image[0].fluid} />
-            <span>Obraz: {image[0].title}</span>
+            </div>
+            <div className={templateStyles.description}>
+              {documentToReactComponents(description.json, options)}
+            </div>
+            <div className={templateStyles.image}>
+              <Img fluid={image[0].fluid} />
+              <span>Obraz: {image[0].title}</span>
+            </div>
           </article>
         </div>
       </main>

@@ -4,6 +4,8 @@ module.exports = {
   siteMetadata: {
     title: "SmartHydro",
     author: "MisiekKisiek",
+    email: "mail@mail.com",
+    tel: "+48 504 111 555",
   },
   plugins: [
     {

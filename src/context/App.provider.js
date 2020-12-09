@@ -15,7 +15,7 @@ class AppProvider extends Component {
       this.setState({
         menu: false
       })
-    } else if(e.target) {
+    } else if (e.target) {
       this.setState(prevState => ({
         menu: !prevState.menu
       }))

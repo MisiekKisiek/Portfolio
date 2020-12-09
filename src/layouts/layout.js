@@ -1,4 +1,4 @@
-import React, { useRef, cloneElement, Children } from 'react';
+import React, { useRef } from 'react';
 
 //Components
 import Header from '../components/header';
@@ -8,27 +8,17 @@ import MainWrap from '../components/mainWrap';
 //Context
 import AppProvider from '../context/App.provider';
 
-const Layout = (props) => {
+const Layout = ({ children }) => {
 
     const curtine = useRef(null);
 
-    const myprops = { curtine: curtine };
-
-    const renderNewChildren = () => {
-        const newChildren = Children.map(props.children, child =>
-            // cloneElement(child, { curtine: curtine, dupa: "dupa" })
-            console.log(child)
-        );
-        return newChildren;
-    }
-
     return (
         <AppProvider>
-            <MainWrap>
+            <MainWrap curtine={curtine}>
                 <Header
                     curtine={curtine}
                 />
-                {props.children}
+                {children}
                 <Footer
                     curtine={curtine}
                 />

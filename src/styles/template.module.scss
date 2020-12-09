@@ -19,46 +19,53 @@
 }
 
 .article {
-  padding: 0px 20px 40px 20px;
+  padding: 0px 20px 50px 20px;
   line-height: 1.4rem;
-  > span {
-    @include decoration-title($right1: 0%, $left2: -1%, $top2: -20%);
-    width: 100%;
-    height: auto;
-    min-height: 90px;
-    padding: 25px 0;
+}
+
+.secondTitle{
+  @include decoration-title($right1: 0%, $left2: -1%, $top2: -20%);
+  width: 100%;
+  height: auto;
+  min-height: 90px;
+  margin: 0;
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(240, 240, 240, 1);
+}
+
+.description{
+  padding-top: 15px;
+  line-height: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+  text-indent: 40px;
+  h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: #444;
   }
-  > div {
-    margin: 20px 0 0px 0;
-    border-radius: 3px;
-    +span{
-      display: inline-block;
-      min-height: auto;
-      margin-bottom: 10px;
-      padding: 0;
-      font-size: .7rem;
-      font-weight: bold;
-      color: #555;
-    }
-  }
-  >p {
-    &:first-of-type{
-      padding-top: 15px;
-      border-top: 1px solid rgba(240, 240, 240, 1);
-    }
-    h3 {
-      margin-bottom: 10px;
-      font-size: 1.4rem;
-      color: #444;
-    }
-    span {
-      font-family: Arial, Helvetica, sans-serif;
-      ul {
-        padding-left: 30px;
-      }
-    }
+  ul {
+    padding-left: 30px;
   }
 }
+
+.image{
+  width: 100%;
+  margin: 20px 0 0px 0;
+  div{
+    border-radius: 3px;
+  }
+  span{
+    display: inline-block;
+    min-height: auto;
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: .7rem;
+    font-weight: bold;
+    color: #555;
+  }
+}
+
 
 @media (min-width: 700px) {
   .main {
@@ -67,27 +74,21 @@
       border-top: 1px solid rgba(240, 240, 240, 1);
     }
   }
-  .article {
-    padding-bottom: 100px;
-    > div {
-      width: 100%;
-      margin: 25px 0 0px 0;
+
+  .secondTitle{
+    border-bottom: none;
+  }
+
+  .description{
+    flex-basis: 50%;
+    padding-top: 0;
+    h3 {
+      margin-top: 10px;
     }
-    p {
-      flex-basis: 50%;
-      padding-top: 0;
-      border-top: none;
-      h3 {
-        margin-top: 10px;
-        font-size: 1.4rem;
-        color: #444;
-      }
-      span {
-        font-family: Arial, Helvetica, sans-serif;
-        ul {
-          padding-left: 30px;
-        }
-      }
-    }
+  }
+
+  .image{
+    width: 100%;
+    margin: 25px 0 0px 0;
   }
 }

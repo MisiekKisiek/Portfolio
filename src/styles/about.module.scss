@@ -4,6 +4,12 @@
 .about {
   max-width: 1024px;
   margin: 0 auto 15px auto;
+  section{
+    max-width: 800px;
+    margin: auto;
+    padding: 0 20px 40px 20px;
+    border-top: 1px solid rgba(240, 240, 240, 1);
+  }
 }
 
 .title {
@@ -18,11 +24,85 @@
   color: $secondColor;
 }
 
-.section{
-  padding: 20px;
-  border-top: 1px solid rgba(240, 240, 240, 1);
-  >div{
-    width: 100%;
-    border-radius: 5px;
+.secondaryTitle{
+  @include decoration-title($right1: 0%, $left2: -1%, $top2: -20%);
+  width: 100%;
+  height: auto;
+  min-height: 90px;
+  margin: 0;
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(240, 240, 240, 1);
+}
+
+.image{
+  width: 100%;
+  margin: 20px 0 0px 0;
+  div{
+    border-radius: 3px;
+  }
+  span{
+    display: inline-block;
+    min-height: auto;
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: .7rem;
+    text-indent: 0;
+    font-weight: bold;
+    color: #555;
   }
 }
+
+.description{
+  padding-top: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+  h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: #444;
+  }
+  ul {
+    padding-left: 30px;
+  }
+}
+
+.article{
+  line-height: 1.5rem;
+  padding: 15px 0 5px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+  p{
+    text-indent: 40px;
+    strong{
+      color: $secondColor;
+    }
+  }
+  div{
+    text-indent: 40px;
+    ul{
+      padding: 10px 0 10px 30px;
+      text-indent: 0;
+      color: $secondColor;
+      li{
+        padding: 4px 0;
+        color: $secondColor;
+        font-weight: bold;
+        a{
+          color: $secondColor;
+          font-weight: bold;
+          &:hover{
+            color: rgba(236, 236, 88, 0.7);
+          }
+        }
+      }
+    }
+  }
+}
+
+// .articleFirst{
+//   @include flex-mother(row,flex-start,flex-start,wrap);
+//   *{
+//     flex-basis: 50%;
+//     padding: 0 10px;
+//   }
+// }

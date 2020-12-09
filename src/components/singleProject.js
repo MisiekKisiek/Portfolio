@@ -4,7 +4,8 @@ import TransitionLink from 'gatsby-plugin-transition-link';
 const SingleProject = (props) => {
 
   const { name, description, image, slug } = props.node;
-  const img = image ? <img src={`${image[0].fluid.src}`} /> : null;
+
+  const img = image ? <img src={`${image[0].fluid.src}`} alt="project" /> : null;
 
   const descriptionSliced = description ? description.content[0].content[0].value.slice(0, 200) : null;
 

@@ -25,90 +25,96 @@
 .main {
   min-height: calc(200vh - #{$header640} - #{$footer640});
   margin: auto;
-  section:first-of-type{
-    position: relative;
-    height: calc(100vh - #{$header640});
-    width: 100vw;
-    background-image: url(../img/main-page-bcgc.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    button{
-      position: absolute;
-      top: 80%;
-      left:50%;
-      transform: translate(-50%,0);
-      width: 50px;
-      height: 50px;
-      line-height: 50px;
-      border-radius: 50%;
-      border: 2px solid $secondColor;
-      font-size: 1.8rem;
-      font-weight: bold;
-      background-color: transparent;
-      color: $secondColor;
-      cursor: pointer;
-      &::after{
-        content:"";
-        display: block;
-        position: absolute;
-        top:50%;
-        left:50%;
-        transform: translate(-50%,-50%);
-        width: 100%;
-        height:100%;
-        border: 2px solid $secondColor;
-        border-radius: 50%;
-        animation: buttonBorder 6s infinite;
-      }
-    }
-    div{
-      @include flex-mother(column,center,center);
+}
+
+.firstSection{
+  position: relative;
+  height: calc(100vh - #{$header640});
+  width: 100vw;
+  background-image: url(../img/main-page-bcgc.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  box-shadow: 0 0px 6px 1px rgba(0,0,0,0.3);
+  button{
+    position: absolute;
+    top: 80%;
+    left:50%;
+    transform: translate(-50%,0);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    border: 2px solid $secondColor;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background-color: transparent;
+    color: $secondColor;
+    cursor: pointer;
+    &::after{
+      content:"";
+      display: block;
       position: absolute;
       top:50%;
-      left:0;
-      transform: translate(0,-50%);
-      height: 130px;
+      left:50%;
+      transform: translate(-50%,-50%);
       width: 100%;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-weight: 700;
-      background-color: rgba(255,255,255,0.8);
-      h1{
-        width: 100%;
-        height: 80px;
-        line-height: 80px;
-        text-align: center;
-        font-size: 2.3rem;
-        font-weight: bold;
-        font-family: 'Kanit','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        color: $secondColor;
-      }
-      h2{
-        position: relative;
-        width: 160px;
-        height: 25px;
-        font-size: 1.2rem;
-        overflow: hidden;
-        span{
-          position: absolute;
-          top: 0;
-          left: -160px;
-          transform: translate(-50%,0);
-          letter-spacing: 1px;
-          font-weight: normal;
-          color: #555;
-          animation: wordWalking 24s infinite;
+      height:100%;
+      border: 2px solid $secondColor;
+      border-radius: 50%;
+      animation: buttonBorder 6s infinite;
+    }
+  }
+  div{
+    @include flex-mother(column,center,center);
+    position: absolute;
+    top:50%;
+    left:0;
+    transform: translate(0,-50%);
+    height: 130px;
+    width: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    background-color: rgba(255,255,255,0.8);
+    h1{
+      width: 100%;
+      height: 80px;
+      line-height: 80px;
+      text-align: center;
+      font-size: 2.3rem;
+      font-weight: bold;
+      font-family: 'Kanit','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color: $secondColor;
+    }
+    h2{
+      position: relative;
+      width: 160px;
+      height: 25px;
+      font-size: 1.2rem;
+      overflow: hidden;
+      span{
+        position: absolute;
+        top: 0;
+        left: -160px;
+        transform: translate(-50%,0);
+        letter-spacing: 1px;
+        font-weight: normal;
+        color: #555;
+        animation: wordWalking 24s infinite;
+        +span{
+          animation: wordWalking 24s 6s infinite;
           +span{
-            animation: wordWalking 24s 6s infinite;
+            animation: wordWalking 24s 12s infinite;
             +span{
-              animation: wordWalking 24s 12s infinite;
-              +span{
-                animation: wordWalking 24s 18s infinite;
-              }
+              animation: wordWalking 24s 18s infinite;
             }
           }
         }
       }
     }
   }
+}
+
+.secondSection{
+
 }

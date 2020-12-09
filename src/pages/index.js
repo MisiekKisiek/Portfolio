@@ -12,8 +12,6 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Main = (props) => {
 
-  console.log(props.dupa)
-
   const secondSection = useRef(null);
 
   const executeScroll = () => secondSection.current.scrollIntoView({ behavior: 'smooth' })
@@ -22,7 +20,7 @@ const Main = (props) => {
     <>
       <Head titleSecond="main" />
       <main className={mainStyles.main}>
-        <section>
+        <section className={mainStyles.firstSection}>
           <div>
             <h1>Smart Hydro</h1>
             <h2>
@@ -36,7 +34,10 @@ const Main = (props) => {
             <FontAwesomeIcon icon={faChevronDown} />
           </button>
         </section>
-        <section ref={secondSection}>
+        <section
+          ref={secondSection}
+          className={mainStyles.secondSection}
+        >
 
         </section>
       </main>

@@ -19,10 +19,9 @@
 }
 
 .section {
-  padding-bottom: 15px;
+  padding-bottom: 40px;
   > div {
-    @include decoration-title();
-    &:nth-child(odd) {
+    &:nth-of-type(odd) {
       @include decoration-title(
         -50%,
         0%,
@@ -32,7 +31,7 @@
         rgba(65, 105, 225, 0.55)
       );
     }
-    &:nth-child(1) {
+    &:nth-of-type(even) {
       @include decoration-title();
     }
   }
@@ -49,6 +48,34 @@
       height: 240px;
       margin-top: 15px;
       border-radius: 5px;
+      span{
+
+      }
+      
+    }
+    span{
+      strong{
+        color: $secondColor;
+      }
+      a{
+        color: $secondColor;
+        font-weight: bold;
+        transition: .2s;
+        &:hover{
+          color: rgba(236, 236, 88, 0.7);
+        }
+      }
+      ul{
+        padding-top: 10px;
+        padding-left: 20px;
+        text-align: start;
+        text-indent: 5px;
+        li{
+          padding: 4px 0;
+          text-align: start;
+          color: $secondColor;
+        }
+      }
     }
   }
 }
@@ -64,16 +91,16 @@
 
 @media (min-width: 850px) {
   .section {
-    padding-bottom: 0;
     article {
       @include flex-mother();
-      padding-top: 5px;
+      padding-top: 0;
       border-top: none;
       span {
-        flex-basis: 50%;
+        flex-grow: 1;
       }
       div {
-        width: 50%;
+        flex-basis: 50%;
+        min-width: 50%;
         height: auto;
         max-height: 260px;
         margin: 0 20px;

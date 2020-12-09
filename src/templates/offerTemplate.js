@@ -52,33 +52,33 @@ const OfferTemplate = (props) => {
     renderNode: {}
   }
 
-  console.log(props)
-
   return (<>
     <Head titleSecond={slug} />
     <main className={templateStyles.main}>
       <h1 className={templateStyles.title}>Nasza oferta</h1>
       <div>
-        <AsideMenu title={name} query={props.data.allContentfulOffers} path={paths.offer} />
+        <AsideMenu
+          title={name}
+          query={props.data.allContentfulOffers}
+          path={paths.offer}
+        />
         <article className={templateStyles.article}>
-          <span>
+          <div className={templateStyles.secondTitle}>
             <h2>
               {name}
             </h2>
-          </span>
-          <p>
-            <span>
-              {documentToReactComponents(description.json, options)}
-            </span>
-          </p>
-          <Img fluid={image.fluid} />
-          <span>Obraz: {image.title}</span>
-          <p>
+          </div>
+          <div className={templateStyles.description}>
+            {documentToReactComponents(description.json, options)}
+          </div>
+          <div className={templateStyles.image}>
+            <Img fluid={image.fluid} />
+            <span>Obraz: {image.title}</span>
+          </div>
+          <div className={templateStyles.description}>
             <h3>Główny zakres usług:</h3>
-            <span>
-              {documentToReactComponents(services.json, options)}
-            </span>
-          </p>
+            {documentToReactComponents(services.json, options)}
+          </div>
         </article>
       </div>
 
