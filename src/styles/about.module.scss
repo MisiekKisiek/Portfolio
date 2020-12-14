@@ -4,7 +4,7 @@
 .about {
   max-width: 1024px;
   margin: 0 auto 15px auto;
-  section{
+  section {
     max-width: 800px;
     margin: auto;
     padding: 0 20px 40px 20px;
@@ -24,7 +24,7 @@
   color: $secondColor;
 }
 
-.secondaryTitle{
+.secondaryTitle {
   @include decoration-title($right1: 0%, $left2: -1%, $top2: -20%);
   width: 100%;
   height: auto;
@@ -34,25 +34,25 @@
   border-bottom: 1px solid rgba(240, 240, 240, 1);
 }
 
-.image{
+.image {
   width: 100%;
   margin: 20px 0 0px 0;
-  div{
+  div {
     border-radius: 3px;
   }
-  span{
+  span {
     display: inline-block;
     min-height: auto;
     margin-bottom: 10px;
     padding: 0;
-    font-size: .7rem;
+    font-size: 0.7rem;
     text-indent: 0;
     font-weight: bold;
     color: #555;
   }
 }
 
-.description{
+.description {
   padding-top: 15px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: justify;
@@ -66,31 +66,30 @@
   }
 }
 
-.article{
+.article {
   line-height: 1.5rem;
   padding: 15px 0 5px 0;
   font-family: Arial, Helvetica, sans-serif;
   text-align: justify;
-  p{
+  p {
     text-indent: 40px;
-    strong{
+    strong {
       color: $secondColor;
     }
   }
-  div{
-    text-indent: 40px;
-    ul{
+  div {
+    ul {
       padding: 10px 0 10px 30px;
       text-indent: 0;
       color: $secondColor;
-      li{
+      li {
         padding: 4px 0;
         color: $secondColor;
         font-weight: bold;
-        a{
+        a {
           color: $secondColor;
           font-weight: bold;
-          &:hover{
+          &:hover {
             color: rgba(236, 236, 88, 0.7);
           }
         }
@@ -98,11 +97,3 @@
     }
   }
 }
-
-// .articleFirst{
-//   @include flex-mother(row,flex-start,flex-start,wrap);
-//   *{
-//     flex-basis: 50%;
-//     padding: 0 10px;
-//   }
-// }

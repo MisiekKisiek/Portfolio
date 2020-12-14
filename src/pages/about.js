@@ -35,14 +35,14 @@ const About = () => {
           </div>
           <article className={`${aboutStyles.article} ${aboutStyles.articleFirst}`}>
             <p>
-              Grupa specjalistów z kierunkowym wykształceniem oraz doświadzczeniem współpracująca pod szyldem <strong>Smart Hydro</strong>, przy kierownictwie właściciela oraz głównego specjalisty <strong>Janusza Filipczyka</strong>.
+              Grupą specjalistów z kierunkowym wykształceniem oraz doświadzczeniem współpracująca pod szyldem <strong>Smart Hydro</strong>, przy kierownictwie właściciela oraz głównego specjalisty <strong>Janusza Filipczyka</strong>.
             </p>
             <div className={aboutStyles.image} >
               <Img fluid={data.avatar.childImageSharp.fluid} />
               <span>Obraz: Zespół Smart Hydro</span>
             </div>
             <p>
-              Tworzymy projekty z wielu dziedzin związanych z budownictwem, a celem wszystkich osób pracujących przy projektach dla <strong>Smart Hydro</strong> jest profesjonalna obsługa, rzetelność i profesjonalizm przy realizacji projektu oraz sprawna i szybka realizacja tematu <strong>:)</strong>
+              Tworzymy projekty z wielu dziedzin związanych z budownictwem, a celem wszystkich osób pracujących przy projektach dla <strong>Smart Hydro</strong> jest profesjonalna obsługa, rzetelność i profesjonalizm przy realizacji projektu oraz sprawna i szybka realizacja tematu <strong>!</strong>
             </p>
           </article>
           <div className={aboutStyles.secondaryTitle}>
@@ -52,7 +52,7 @@ const About = () => {
           </div>
           <article className={aboutStyles.article}>
             <div>
-              <span>Jesteśmy firmą specjalizującą się w wielu tematach z dziedzin, głównie:</span>
+              <p>Jesteśmy firmą specjalizującą się w wielu tematach z dziedzin, głównie:</p>
               <ul>
                 <li>budownictwa hydrotechnicznego,</li>
                 <li>budownictwa konstrukcyjnego,</li>
@@ -63,7 +63,21 @@ const About = () => {
               </ul>
             </div>
           </article>
-
+          <div className={aboutStyles.secondaryTitle}>
+            <h2>
+              Jakie są nasze cele?
+            </h2>
+          </div>
+          <article className={aboutStyles.article}>
+            <div>
+              <p>Przede wsystkim celujemy w profesjonalne i szybkie przygotowanie usługi bez narażania klienta na niepotrzebne koszta. Same zadania, których się podejmujemy sprawiają, że nad każdą sprawą musimy pochylić się indywidualnie, co w efekcie pozwala nam na optymalizację zadania wedle potrzeb klienta.</p>
+              <div className={aboutStyles.image} >
+                <Img fluid={data.avatar.childImageSharp.fluid} />
+                <span>Obraz: Zespół Smart Hydro</span>
+              </div>
+              <p>Optymistycznie patrzymy w przyszłość, w naszych planach mamy rozwijanie marki, rozszerzenie działalności na kolejne gałęzie ze swery budownictwa oraz oczywiście baczne przyglądanie się zmianom w prawie oraz na rynku dla każdej z dziedzin w których świadczymy usługi</p>
+            </div>
+          </article>
         </section>
       </main>
     </>
