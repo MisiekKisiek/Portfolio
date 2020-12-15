@@ -33,7 +33,7 @@ const About = () => {
               Kim jesteśmy?
             </h2>
           </div>
-          <article className={`${aboutStyles.article} ${aboutStyles.articleFirst}`}>
+          <article className={aboutStyles.article}>
             <p>
               Grupą specjalistów z kierunkowym wykształceniem oraz doświadzczeniem współpracująca pod szyldem <strong>Smart Hydro</strong>, przy kierownictwie właściciela oraz głównego specjalisty <strong>Janusza Filipczyka</strong>.
             </p>
@@ -50,18 +50,16 @@ const About = () => {
               Czym się zajmujemy?
             </h2>
           </div>
-          <article className={aboutStyles.article}>
-            <div>
-              <p>Jesteśmy firmą specjalizującą się w wielu tematach z dziedzin, głównie:</p>
-              <ul>
-                <li>budownictwa hydrotechnicznego,</li>
-                <li>budownictwa konstrukcyjnego,</li>
-                <li>legalizacji samowoli budowlanych,</li>
-                <li>
-                  <Link to="/offer">...pełna oferta</Link>
-                </li>
-              </ul>
-            </div>
+          <article className={`${aboutStyles.article} ${aboutStyles.articleList}`}>
+            <p>Jesteśmy firmą specjalizującą się w wielu tematach z dziedzin, głównie:</p>
+            <ul>
+              <li>budownictwa hydrotechnicznego,</li>
+              <li>budownictwa konstrukcyjnego,</li>
+              <li>legalizacji samowoli budowlanych,</li>
+              <li>
+                <Link to="/offer">...pełna oferta</Link>
+              </li>
+            </ul>
           </article>
           <div className={aboutStyles.secondaryTitle}>
             <h2>
@@ -69,14 +67,12 @@ const About = () => {
             </h2>
           </div>
           <article className={aboutStyles.article}>
-            <div>
-              <p>Przede wsystkim celujemy w profesjonalne i szybkie przygotowanie usługi bez narażania klienta na niepotrzebne koszta. Same zadania, których się podejmujemy sprawiają, że nad każdą sprawą musimy pochylić się indywidualnie, co w efekcie pozwala nam na optymalizację zadania wedle potrzeb klienta.</p>
-              <div className={aboutStyles.image} >
-                <Img fluid={data.avatar.childImageSharp.fluid} />
-                <span>Obraz: Zespół Smart Hydro</span>
-              </div>
-              <p>Optymistycznie patrzymy w przyszłość, w naszych planach mamy rozwijanie marki, rozszerzenie działalności na kolejne gałęzie ze swery budownictwa oraz oczywiście baczne przyglądanie się zmianom w prawie oraz na rynku dla każdej z dziedzin w których świadczymy usługi</p>
+            <p>Przede wsystkim celujemy w profesjonalne i szybkie przygotowanie usługi bez narażania klienta na niepotrzebne koszta. Same zadania, których się podejmujemy sprawiają, że nad każdą sprawą musimy pochylić się indywidualnie, co w efekcie pozwala nam na optymalizację zadania wedle potrzeb klienta.</p>
+            <div className={aboutStyles.image} >
+              <Img fluid={data.avatar.childImageSharp.fluid} />
+              <span>Obraz: Zespół Smart Hydro</span>
             </div>
+            <p>Optymistycznie patrzymy w przyszłość, w naszych planach mamy rozwijanie marki, rozszerzenie działalności na kolejne gałęzie ze swery budownictwa oraz oczywiście baczne przyglądanie się zmianom w prawie oraz na rynku dla każdej z dziedzin w których świadczymy usługi.</p>
           </article>
         </section>
       </main>

@@ -4,7 +4,7 @@ import TransitionLink from 'gatsby-plugin-transition-link';
 
 //FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faCross } from '@fortawesome/free-solid-svg-icons';
 
 //Utils
 import gsap from 'gsap';
@@ -122,7 +122,7 @@ const Footer = ({ curtine }) => {
             </address>
           </section>
           <section>
-            <span>Designed with <FontAwesomeIcon icon={faHeart} /> by:</span>
+            <span>Designed with <FontAwesomeIcon icon={faCross} /> and <FontAwesomeIcon icon={faHeart} />by:</span>
             <a href="/">{projectsAndOffers.site.siteMetadata.author}</a>
           </section>
         </div>

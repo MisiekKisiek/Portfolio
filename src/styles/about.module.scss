@@ -77,20 +77,63 @@
       color: $secondColor;
     }
   }
-  div {
-    ul {
-      padding: 10px 0 10px 30px;
-      text-indent: 0;
+}
+
+.article-list{
+  ul {
+    padding: 10px 0 10px 30px;
+    text-indent: 0;
+    color: $secondColor;
+    li {
+      padding: 4px 0;
       color: $secondColor;
-      li {
-        padding: 4px 0;
+      font-weight: bold;
+      a {
         color: $secondColor;
         font-weight: bold;
+        &:hover {
+          color: rgba(236, 236, 88, 0.7);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 700px){
+  .image {
+    width: 100%;
+    margin: 20px 0 0px 0;
+    div {
+    }
+    span {
+      margin-bottom: 0;
+    }
+  }
+  .article {
+    @include flex-mother(row,flex-start,flex-start,wrap);
+    padding-bottom: 0;
+    >*{
+      flex-basis: 46%;
+      margin: 0 2%;
+      padding: 0;
+    }
+    >*:first-child{
+      flex-basis: 92%;
+      margin: 0 4% 15px 4%;
+    }
+    p {
+      strong {
+      }
+    }
+  }
+  
+  .article-list{
+    ul {
+      margin: 0;
+      padding-top: 0;
+      li {
         a {
-          color: $secondColor;
-          font-weight: bold;
           &:hover {
-            color: rgba(236, 236, 88, 0.7);
           }
         }
       }
