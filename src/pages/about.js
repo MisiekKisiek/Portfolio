@@ -26,7 +26,7 @@ const About = () => {
     <>
       <Head titleSecond="o nas" />
       <main className={aboutStyles.about}>
-        <h1 className={aboutStyles.title}>o nas!</h1>
+        <h1 className={aboutStyles.title}>O nas!</h1>
         <section>
           <div className={aboutStyles.secondaryTitle}>
             <h2>
@@ -35,7 +35,7 @@ const About = () => {
           </div>
           <article className={aboutStyles.article}>
             <p>
-              Grupą specjalistów z kierunkowym wykształceniem oraz doświadzczeniem współpracująca pod szyldem <strong>Smart Hydro</strong>, przy kierownictwie właściciela oraz głównego specjalisty <strong>Janusza Filipczyka</strong>.
+              Jesteśmy grupą specjalistów z kierunkowym wykształceniem oraz doświadzczeniem, współpracująca pod szyldem <strong>Smart Hydro</strong>, przy kierownictwie właściciela oraz głównego specjalisty <strong>Janusza Filipczyka</strong>.
             </p>
             <div className={aboutStyles.image} >
               <Img fluid={data.avatar.childImageSharp.fluid} />

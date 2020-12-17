@@ -67,7 +67,7 @@
 }
 
 
-@media (min-width: 700px) {
+@media (min-width: $breakPoint1) {
   .main {
     > div {
       @include flex-mother(row);

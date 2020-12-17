@@ -99,16 +99,16 @@ const Offer = (props) => {
                 {" "}
                 lub bezpośrednio przez mail
                 <a href={`mailto:${offers.site.siteMetadata.email}`}> {offers.site.siteMetadata.email}
-                </a> lub telefon
+                </a> lub telefon{" "}
                 <a href={`tel:${offers.site.siteMetadata.tel}`}>{offers.site.siteMetadata.tel}
-                </a> od pon. do pt. w godzinach 8:00 - 17:00 (kontakt w innym terminie po uprzednim uzgodnieniu).
+                </a> od pon. do pt. w godzinach 8:00 - 17:00 (kontakt w innym terminie po uprzednim uprzedzeniu).
                 <br />
                 <br />
                 <span>Jeżeli zdecydujesz się skorzystać z naszych usług gwarantujemy:</span>
                 <ul>
                   <li>Indywidualną analizę oraz wycenę zlecenia,</li>
                   <li>profesjonalną obsługę,</li>
-                  <li>opiekę nad zadaniem od początku do samego końca procesu,</li>
+                  <li>opiekę nad realizacją zadania od początku do samego końca procesu,</li>
                   <li>doradztwo na każdym etapie zlecenia,</li>
                 </ul>
               </span>

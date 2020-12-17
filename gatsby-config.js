@@ -42,5 +42,11 @@ module.exports = {
         layout: require.resolve(`./src/layouts/layout.js`)
       }
     },
+    {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+
+      }
+    }
   ],
 }

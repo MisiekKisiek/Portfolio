@@ -89,7 +89,7 @@
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: $breakPoint1) {
   .contact {
     h1 {
       line-height: 2rem;
@@ -136,7 +136,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $breakPoint2) {
   .contact {
     h1{
       padding: 35px 100px;

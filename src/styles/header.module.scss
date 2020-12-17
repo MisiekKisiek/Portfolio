@@ -119,7 +119,7 @@
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: $breakPoint1) {
   .bars {
     display: none;
   }
@@ -133,6 +133,7 @@
       @include flex-mother(row, flex-end, center);
       opacity: 1;
       width: 100%;
+      padding-right: 20px;
       overflow: hidden;
       li {
         @include flex-mother(row, center, center);

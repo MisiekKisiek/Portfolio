@@ -32,6 +32,19 @@
   margin: 0;
   padding: 25px 0;
   border-bottom: 1px solid rgba(240, 240, 240, 1);
+  &:nth-of-type(even) {
+    @include decoration-title(
+      -50%,
+      0%,
+      rgba(255, 255, 0, 0.55),
+      40%,
+      -3%,
+      rgba(65, 105, 225, 0.55)
+    );
+  }
+  &:nth-of-type(odd) {
+    @include decoration-title();
+  }
 }
 
 .image {
@@ -99,7 +112,7 @@
   }
 }
 
-@media (min-width: 700px){
+@media (min-width: $breakPoint1){
   .image {
     width: 100%;
     margin: 20px 0 0px 0;
@@ -129,8 +142,9 @@
   
   .article-list{
     ul {
+      flex-basis: 92%;
       margin: 0;
-      padding-top: 0;
+      padding: 0 0 0 30px;
       li {
         a {
           &:hover {

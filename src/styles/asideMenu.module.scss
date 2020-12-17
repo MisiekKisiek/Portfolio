@@ -29,7 +29,7 @@
   font-weight: bold;
 }
 
-@media (min-width: 700px) {
+@media (min-width: $breakPoint1) {
   .menu {
     min-width: 300px;
     max-width: 300px;

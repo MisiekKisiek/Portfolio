@@ -61,7 +61,7 @@
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: $breakPoint0) {
   .container {
     > div {
       h1 {
@@ -78,7 +78,7 @@
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: $breakPoint1) {
   .container {
     > div {
       @include flex-mother(row);
@@ -97,7 +97,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $breakPoint2) {
   .container {
     width: 90%;
     > div {

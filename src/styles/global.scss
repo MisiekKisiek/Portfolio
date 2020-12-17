@@ -24,7 +24,7 @@ body {
   height: 300px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $breakPoint2) {
   .tl-edges {
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.03);
   }
