@@ -38,7 +38,14 @@ const Main = (props) => {
           ref={secondSection}
           className={mainStyles.secondSection}
         >
+          <div
+            data-sal="fade"
+            data-sal-delay="300"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+          >
 
+          </div>
         </section>
       </main>
     </>

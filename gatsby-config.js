@@ -37,16 +37,16 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+
+      }
+    },
+    {
       resolve: "gatsby-plugin-transition-link",
       options: {
         layout: require.resolve(`./src/layouts/layout.js`)
       }
     },
-    {
-      resolve: `gatsby-plugin-scroll-reveal`,
-      options: {
-
-      }
-    }
   ],
 }
