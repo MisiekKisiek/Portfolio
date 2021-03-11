@@ -42,7 +42,7 @@ const Header = ({ curtine }) => {
 		}
 	`)
 
-	const TRANSITION_LENGTH = 1
+	const TRANSITION_LENGTH = 1.4
 
 	const exitTransition = {
 		length: TRANSITION_LENGTH,

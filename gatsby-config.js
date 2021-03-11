@@ -27,19 +27,19 @@ module.exports = {
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
-          `Comfortaa\:300,400,400i,700`,
-          `Goldman\:800`
+          {
+            family: `Noto Sans JP`,
+            variant: '400,700',
+          },
         ],
-        display: 'swap'
-      }
+      },
     },
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
-
       }
     },
     {

@@ -21,6 +21,7 @@ const Head = ({ titleSecond }) => {
       <Helmet  >
         <title>{`${title} ${titleSecond ? "| " + titleSecond : ""}`}</title>
         <link rel='icon' type='image/png' href="favicon.ico" sizes="16x16" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP" rel="stylesheet"></link>
       </Helmet>
     </>
   );

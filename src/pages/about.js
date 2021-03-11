@@ -35,7 +35,7 @@ const About = () => {
           </div>
           <article className={aboutStyles.article}>
             <p>
-              Jesteśmy grupą specjalistów z kierunkowym wykształceniem oraz doświadzczeniem, współpracująca pod szyldem <strong>Smart Hydro</strong>, przy kierownictwie właściciela oraz głównego specjalisty <strong>Janusza Filipczyka</strong>.
+              Jesteśmy grupą specjalistów z kierunkowym wykształceniem oraz doświadzczeniem w dziedzinie budownictwa lądowego i wodnego, współpracująca pod szyldem <strong>Smart Hydro</strong>, przy kierownictwie właściciela oraz głównego specjalisty <strong>Janusza Filipczyka</strong>.
             </p>
             <div className={aboutStyles.image} >
               <Img fluid={data.avatar.childImageSharp.fluid} />

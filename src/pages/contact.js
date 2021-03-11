@@ -102,7 +102,7 @@ const Contact = () => {
       .then((result) => {
         console.log(result.text);
         handleSubmitContactForm();
-        handleFormAlert("Wiadomość została wysłana poprawnie", alertColors.correct);
+        handleFormAlert("Wiadomość została wysłana!", alertColors.correct);
       }, (error) => {
         console.log(error.text);
         handleFormAlert("Wiadomość nie została przesłana", alertColors.correct);
