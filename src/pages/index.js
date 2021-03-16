@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import Img from "gatsby-image";
-import TransitionLink from 'gatsby-plugin-transition-link';
 
 //Components
 import Head from '../components/head';
@@ -12,9 +11,6 @@ import mainStyles from '../styles/main.module.scss';
 //FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-
-//Utils
-import gsap from 'gsap';
 
 const Main = () => {
 
@@ -33,6 +29,19 @@ const Main = () => {
             id
             shortName
             slug
+            description{
+              json
+              content{
+                content{
+                  value
+                }
+              }
+            }
+            image { 
+              fluid(maxWidth: 800){
+                src
+              }
+            }
           }
         }
       }
@@ -54,32 +63,55 @@ const Main = () => {
     
   `)
 
-  const renderOfferLinks = () => {
-    let links = data.allContentfulOffers.edges.map(offer => {
-      const { slug, id, name } = offer.node;
-      return <li key={id}>
-        <TransitionLink
-          to={`/offer/${slug}`}
-        // exit={exitTransition}
-        // entry={entryTransition}
-        >
-          {name}
-        </TransitionLink>
-      </li>
-    })
+  const scrollUtil = useRef(null);
 
-    links.push(<li>
-      <Link to="/offer">...</Link>
-    </li>)
+  const renderOfferLinks = () => {
+    let links = data.allContentfulOffers.edges.map((offer, index) => {
+      const { slug, id, name } = offer.node;
+      if (index < 5) {
+        return <li key={id}>
+          <Link
+            to={`/offer/${slug}`}
+          >
+            {name + ","}
+          </Link>
+        </li>
+      } else if (index === 5) {
+        return <li key={id}>
+          <Link
+            to={`/offer/${slug}`}
+          >
+            ...więcej
+        </Link>
+        </li>
+      } else {
+        return
+      }
+
+    })
 
     return links
   }
 
-  const scrollUtil = useRef(null);
+  const renderRealizationLinks = () => {
+    const links = data.allContentfulProjects.edges.map(project => {
+      const { slug, shortName, id, image } = project.node;
+      console.log(image)
+      return <>
+        {/* <Link
+          key={id}
+          to={`/projects/${slug}`}
+        >
+
+          {shortName}
+        </Link> */}
+        <img src={`${image[0].fluid.src}`} alt="project" />
+      </>
+    })
+    return links
+  }
 
   const executeScroll = () => scrollUtil.current.scrollIntoView({ behavior: 'smooth' })
-
-  console.log(data)
 
   return (
     <>
@@ -157,10 +189,44 @@ const Main = () => {
           >
             Oferta
           </h1>
-          <article className={mainStyles.article}>
-            <ul>
-              {renderOfferLinks()}
-            </ul>
+          <ul
+            className={mainStyles.offerList}
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+          >
+            {renderOfferLinks()}
+          </ul>
+          <p
+            className={mainStyles.paragraph}
+          >
+            Jeżeli masz zadanie z dziedzin budownictwa lądowego i/lub hydrotechnicznego, który nie zawiera się w naszej ofercie wyślij zgłoszenie z opisem  poprzez <Link to="/contact">formularz kontaktowy</Link>.
+          </p>
+        </section>
+        <section
+          className={mainStyles.fourthSection}
+        >
+          <h1
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+          >
+            Realizacje
+          </h1>
+          <article>
+            <p
+              className={mainStyles.paragraph}
+            >
+              Nasze doświadczenie jest budowane przede wszystkim na praktyce, którą zdobywamy przy konkretnych projektach. Jesteśmy otwarci na wszelkie nowe ścieżki rozwoju, co sprawia że ciągle poszerzamy nasze możliwości działania.
+            </p>
+            <p
+              className={mainStyles.paragraph}
+            >
+              Oczywiście najskuteczniejszym sposobem na udowodnienie kwalifiakcji jest przedstawienie samych projektów, dlatego oto niektóre z nich:
+            </p>
+            {renderRealizationLinks()}
           </article>
         </section>
       </main>
