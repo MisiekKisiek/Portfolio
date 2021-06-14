@@ -235,7 +235,7 @@
 .fourthSection{
   max-width: $breakPoint2;
   margin: auto;
-  padding: 0px 20px 20px ;
+  padding: 0px 20px 0px;
   h1{
     @include flex-mother(row, center, center);
     @include decoration-element($left: 80%);
@@ -252,8 +252,102 @@
     word-wrap: break-word;
     color: $secondColor;
   }
+  article{
+    div{
+      margin: 20px 0;
+      a{
+        transition: .2s;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        color: #555;
+        font-size: .6rem;
+        font-weight: bold;
+        img{
+          max-width: 100%;
+          border-radius: 5px;
+        }
+      }
+      a:hover, img:hover{
+        opacity: .9;
+      }
+    }
+  }
 }
 
-// @media (max-width: $break-point600) {
+.fifthSection{
+  max-width: $breakPoint2;
+  margin: auto;
+  padding: 0px 20px 40px;
+  h1{
+    @include flex-mother(row, center, center);
+    @include decoration-element($left: 80%);
+    &::after, &::before{
+      content: none;
+    }
+    position: relative;
+    min-height: 100px;
+    padding: 0px 55px 20px 55px;
+    text-align: center;
+    font-family: 'Kanit','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    word-wrap: break-word;
+    color: $secondColor;
+  }
+  p{
+    text-indent: 40px;
+    font-size: 1.15rem;
+    text-align: justify;
+    a {
+      color: $secondColor;
+      font-weight: bold;
+      text-decoration: none;
+      transition: .2s;
+      &:hover{
+        color: rgba(236, 236, 88, 0.7);
+      }
+    }
+  }
+}
 
-// }
+@media (max-width: $breakPoint1) {
+  .secondSection{
+    max-width: $breakPoint2;
+    margin: auto;
+    padding: 0 20px 0 20px;
+  }
+  
+  .article{
+    @include flex-mother($flex-direction: row, $justify-content: flex-start,$align-items: start, $flex-wrap: wrap);
+    *{
+      flex-basis: 50%;
+    }
+  }
+
+  .image{
+    flex-basis: 30%;
+    padding: 0 0 10px 0;
+    *{
+      border-radius: 5px;
+    }
+  }
+  
+  .paragraph{
+    flex-basis: 40%;
+    padding: 10px 0 0 0;
+    text-indent: 40px;
+    font-size: 1.15rem;
+    text-align: justify;
+    strong {
+      color: $secondColor;
+    }
+    a{
+      color: $secondColor;
+      text-decoration: none;
+      transition: .2s;
+      &:hover{
+        color: rgba(236, 236, 88, 0.7);
+      }
+    }
+  }
+}

@@ -1,16 +1,27 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Icon, Point } from 'leaflet';
 
 const MapContact = () => {
   return (<>
-    <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+    <MapContainer center={[50.04313, 19.99360]} zoom={15} scrollWheelZoom={false}>
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[51.505, -0.09]}>
+      <Marker
+        icon={new Icon({
+          iconUrl: require("../img/marker.png"),
+          iconRetinaUrl: require("../img/marker.png"),
+          iconAnchor: [20, 40],
+          popupAnchor: [0, -40],
+          iconSize: new Point(40, 40),
+          className: "leaflet-div-icon",
+        })}
+        position={[50.04313, 19.99350]}
+      >
         <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
+          Smart Hydro, zapraszamy!
         </Popup>
       </Marker>
     </MapContainer>

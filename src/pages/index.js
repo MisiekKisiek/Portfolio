@@ -38,7 +38,7 @@ const Main = () => {
               }
             }
             image { 
-              fluid(maxWidth: 800){
+              fluid(maxWidth: 400){
                 src
               }
             }
@@ -97,16 +97,17 @@ const Main = () => {
     const links = data.allContentfulProjects.edges.map(project => {
       const { slug, shortName, id, image } = project.node;
       console.log(image)
-      return <>
-        {/* <Link
+      return <div>
+
+        <Link
           key={id}
           to={`/projects/${slug}`}
         >
-
+          <img src={`${image[0].fluid.src}`} alt="project" />
           {shortName}
-        </Link> */}
-        <img src={`${image[0].fluid.src}`} alt="project" />
-      </>
+        </Link>
+
+      </div>
     })
     return links
   }
@@ -158,24 +159,26 @@ const Main = () => {
                 fluid={data.avatar.childImageSharp.fluid}
               />
             </div>
-            <p
-              className={mainStyles.paragraph}
-              data-sal="slide-up"
-              data-sal-delay="300"
-              data-sal-duration="1000"
-              data-sal-easing="ease"
-            >
-              Jesteśmy grupą specjalistów z kierunkowym wykształceniem oraz doświadzczeniem w dziedzinie budownictwa lądowego i wodnego, współpracująca pod szyldem <strong>Smart Hydro</strong>.
+            <div>
+              <p
+                className={mainStyles.paragraph}
+                data-sal="slide-up"
+                data-sal-delay="300"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+              >
+                Jesteśmy grupą specjalistów z kierunkowym wykształceniem oraz doświadzczeniem w dziedzinie budownictwa lądowego i wodnego, współpracująca pod szyldem <strong>Smart Hydro</strong>.
             </p>
-            <p
-              className={mainStyles.paragraph}
-              data-sal="slide-up"
-              data-sal-delay="300"
-              data-sal-duration="1000"
-              data-sal-easing="ease"
-            >
-              Specjalizujemy się w szerokim pasmie usług z budownictwa ladowego i wodnego, przede wszystkim w legalizacji samowoli budowlanych, sporządzania analiz konstrukcyjnych jak i wiele innych <Link to="/offer">(zobacz)</Link>.
+              <p
+                className={mainStyles.paragraph}
+                data-sal="slide-up"
+                data-sal-delay="300"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+              >
+                Specjalizujemy się w szerokim pasmie usług z budownictwa ladowego i wodnego, przede wszystkim w legalizacji samowoli budowlanych, sporządzania analiz konstrukcyjnych jak i wiele innych <Link to="/offer">(zobacz)</Link>.
             </p>
+            </div>
           </article>
         </section>
         <section
@@ -228,6 +231,21 @@ const Main = () => {
             </p>
             {renderRealizationLinks()}
           </article>
+        </section>
+        <section
+          className={mainStyles.fifthSection}
+        >
+          <h1
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+          >
+            Kontakt
+          </h1>
+          <p>
+            Zapraszamy do kontaktu poprzez formularz,bezpośrednio przez telefon lub e-mail <Link to="/contact">TU</Link>.
+          </p>
         </section>
       </main>
     </>
