@@ -159,9 +159,8 @@ const Main = () => {
                 fluid={data.avatar.childImageSharp.fluid}
               />
             </div>
-            <div>
+            <div className={mainStyles.paragraph}>
               <p
-                className={mainStyles.paragraph}
                 data-sal="slide-up"
                 data-sal-delay="300"
                 data-sal-duration="1000"
@@ -170,7 +169,6 @@ const Main = () => {
                 Jesteśmy grupą specjalistów z kierunkowym wykształceniem oraz doświadzczeniem w dziedzinie budownictwa lądowego i wodnego, współpracująca pod szyldem <strong>Smart Hydro</strong>.
             </p>
               <p
-                className={mainStyles.paragraph}
                 data-sal="slide-up"
                 data-sal-delay="300"
                 data-sal-duration="1000"
@@ -192,20 +190,22 @@ const Main = () => {
           >
             Oferta
           </h1>
-          <ul
-            className={mainStyles.offerList}
-            data-sal="slide-up"
-            data-sal-delay="300"
-            data-sal-duration="1000"
-            data-sal-easing="ease"
-          >
-            {renderOfferLinks()}
-          </ul>
-          <p
-            className={mainStyles.paragraph}
-          >
-            Jeżeli masz zadanie z dziedzin budownictwa lądowego i/lub hydrotechnicznego, który nie zawiera się w naszej ofercie wyślij zgłoszenie z opisem  poprzez <Link to="/contact">formularz kontaktowy</Link>.
+          <div>
+            <ul
+              className={mainStyles.offerList}
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
+              {renderOfferLinks()}
+            </ul>
+            <p
+              className={mainStyles.paragraph}
+            >
+              Jeżeli masz zadanie z dziedzin budownictwa lądowego i/lub hydrotechnicznego, który nie zawiera się w naszej ofercie wyślij zgłoszenie z opisem  poprzez <Link to="/contact">formularz kontaktowy</Link>.
           </p>
+          </div>
         </section>
         <section
           className={mainStyles.fourthSection}
