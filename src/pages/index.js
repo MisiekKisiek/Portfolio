@@ -190,7 +190,7 @@ const Main = () => {
           >
             Oferta
           </h1>
-          <div>
+          <div className={mainStyles.offerContainer}>
             <ul
               className={mainStyles.offerList}
               data-sal="slide-up"
@@ -200,11 +200,17 @@ const Main = () => {
             >
               {renderOfferLinks()}
             </ul>
-            <p
+            <div
               className={mainStyles.paragraph}
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
             >
-              Jeżeli masz zadanie z dziedzin budownictwa lądowego i/lub hydrotechnicznego, który nie zawiera się w naszej ofercie wyślij zgłoszenie z opisem  poprzez <Link to="/contact">formularz kontaktowy</Link>.
-          </p>
+              <p>
+                Jeżeli masz zadanie z dziedzin budownictwa lądowego i/lub hydrotechnicznego, który nie zawiera się w naszej ofercie wyślij zgłoszenie z opisem  poprzez <Link to="/contact">formularz kontaktowy</Link>.
+              </p>
+            </div>
           </div>
         </section>
         <section
@@ -219,16 +225,14 @@ const Main = () => {
             Realizacje
           </h1>
           <article>
-            <p
-              className={mainStyles.paragraph}
-            >
-              Nasze doświadczenie jest budowane przede wszystkim na praktyce, którą zdobywamy przy konkretnych projektach. Jesteśmy otwarci na wszelkie nowe ścieżki rozwoju, co sprawia że ciągle poszerzamy nasze możliwości działania.
+            <div className={mainStyles.paragraph}>
+              <p>
+                Nasze doświadczenie jest budowane przede wszystkim na praktyce, którą zdobywamy przy konkretnych projektach. Jesteśmy otwarci na wszelkie nowe ścieżki rozwoju, co sprawia że ciągle poszerzamy nasze możliwości działania.
             </p>
-            <p
-              className={mainStyles.paragraph}
-            >
-              Oczywiście najskuteczniejszym sposobem na udowodnienie kwalifiakcji jest przedstawienie samych projektów, dlatego oto niektóre z nich:
+              <p>
+                Oczywiście najskuteczniejszym sposobem na udowodnienie kwalifiakcji jest przedstawienie samych projektów, dlatego oto niektóre z nich:
             </p>
+            </div>
             {renderRealizationLinks()}
           </article>
         </section>
@@ -243,7 +247,12 @@ const Main = () => {
           >
             Kontakt
           </h1>
-          <p>
+          <p
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+          >
             Zapraszamy do kontaktu poprzez formularz,bezpośrednio przez telefon lub e-mail <Link to="/contact">TU</Link>.
           </p>
         </section>

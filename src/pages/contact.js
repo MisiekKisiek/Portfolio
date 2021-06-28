@@ -152,11 +152,11 @@ const Contact = () => {
         </section>
         <section>
           <address>
-            <span>SmartHydro Sp. z o.o.</span>
-            <span>31-331 Kraków, ul. Mehoffera 10/2</span>
+            <span>Janusz Filipczyk Smarthydro</span>
+            <span>30-716 Kraków , Przewóz 32D lok. 9</span>
             <span>tel: +48 604 156 103</span>
             <span>e-mail: smarthydro@smarthydro.pl</span>
-            <span>NIP: 123654987</span>
+            <span>NIP: 6751329560</span>
           </address>
         </section>
       </div>

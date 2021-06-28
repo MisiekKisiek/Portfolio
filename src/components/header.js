@@ -25,16 +25,16 @@ const Header = ({ curtine }) => {
 
 	const data = useStaticQuery(graphql`
 		query {
-			logo50: file(relativePath: { eq: "logo.png" }) {
+			logo50: file(relativePath: { eq: "smarthydro.png" }) {
 				childImageSharp {
-					fixed(width: 50, height: 50){
+					fixed( height: 50){
 						...GatsbyImageSharpFixed
 					}
 				}
 			}
-			logo100: file(relativePath: { eq: "logo.png" }) {
+			logo100: file(relativePath: { eq: "smarthydro.png" }) {
 				childImageSharp {
-					fixed(width: 100, height: 100){
+					fixed( height: 100){
 						...GatsbyImageSharpFixed
 					}
 				}
