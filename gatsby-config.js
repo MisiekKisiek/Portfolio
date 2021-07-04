@@ -2,17 +2,21 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: "SmartHydro",
+    title: "Janusz Filipczyk SmartHydro",
     author: "MisiekKisiek",
-    email: "mail@mail.com",
-    tel: "+48 504 111 555",
+    email: "jmfilipczyk@gmail.com",
+    tel: "+48 791 393 290",
+    adress: "30-716 Kraków , Przewóz 32D lok. 9",
+    nip: "6751329560",
   },
   plugins: [
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        // spaceId: process.env.CONTENTFUL_SPACE_ID,
+        // accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        spaceId: "h52rsxy6p2if",
+        accessToken: "bP2mDkKr2lwoqW5vjlo-gav6X3x-dXgLwfk9fH9RnyE",
       },
     },
     {
@@ -26,17 +30,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Noto Sans JP`,
-            variant: '400,700',
-          },
-        ],
-      },
-    },
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {

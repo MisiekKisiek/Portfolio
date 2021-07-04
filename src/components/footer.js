@@ -39,7 +39,7 @@ const Footer = ({ curtine }) => {
     },
   }
 
-  const projectsAndOffers = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
   {
     allContentfulProjects{
       edges{
@@ -61,7 +61,12 @@ const Footer = ({ curtine }) => {
     }
     site{
       siteMetadata{
+          title
           author
+          email
+          tel
+          adress
+          nip
       }
     }
   }
@@ -69,7 +74,7 @@ const Footer = ({ curtine }) => {
 
 
   const renderRealizationLinks = () => {
-    const links = projectsAndOffers.allContentfulProjects.edges.map(project => {
+    const links = data.allContentfulProjects.edges.map(project => {
       const { slug, shortName, id } = project.node;
       return <TransitionLink
         key={id}
@@ -84,7 +89,7 @@ const Footer = ({ curtine }) => {
   }
 
   const renderOfferLinks = () => {
-    const links = projectsAndOffers.allContentfulOffers.edges.map(offer => {
+    const links = data.allContentfulOffers.edges.map(offer => {
       const { slug, id, name } = offer.node;
       return <TransitionLink
         key={id}
@@ -114,16 +119,16 @@ const Footer = ({ curtine }) => {
           </section>
           <section>
             <address>
-              <span>Janusz Filipczyk Smarthydro</span>
-              <span>30-716 Kraków , Przewóz 32D lok. 9</span>
-              <span>tel: +48 604 156 103</span>
-              <span>e-mail: smarthydro@smarthydro.pl</span>
-              <span>NIP: 6751329560</span>
+              <span>{data.site.siteMetadata.title}</span>
+              <span>{data.site.siteMetadata.adress}</span>
+              <span>tel: {data.site.siteMetadata.tel}</span>
+              <span>e-mail: {data.site.siteMetadata.email}</span>
+              <span>NIP: {data.site.siteMetadata.nip}</span>
             </address>
           </section>
           <section>
             <span>Designed with <FontAwesomeIcon icon={faCross} /> and <FontAwesomeIcon icon={faHeart} />by:</span>
-            <a href="/">{projectsAndOffers.site.siteMetadata.author}</a>
+            <a href="/">{data.site.siteMetadata.author}</a>
           </section>
         </div>
       </footer>

@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import emailjs from 'emailjs-com';
 
 //Components
@@ -9,6 +10,21 @@ import Map from '../components/mapContact';
 import contactStyles from '../styles/contact.module.scss';
 
 const Contact = () => {
+
+  const data = useStaticQuery(graphql`
+  {
+    site{
+      siteMetadata{
+          title
+          author
+          email
+          tel
+          adress
+          nip
+      }
+    }
+  }
+  `)
 
   const alertColors = {
     wrong: "red",
@@ -152,11 +168,11 @@ const Contact = () => {
         </section>
         <section>
           <address>
-            <span>Janusz Filipczyk Smarthydro</span>
-            <span>30-716 Kraków , Przewóz 32D lok. 9</span>
-            <span>tel: +48 604 156 103</span>
-            <span>e-mail: smarthydro@smarthydro.pl</span>
-            <span>NIP: 6751329560</span>
+            <span>{data.site.siteMetadata.title}</span>
+            <span>{data.site.siteMetadata.adress}</span>
+            <span>tel: {data.site.siteMetadata.tel}</span>
+            <span>e-mail: {data.site.siteMetadata.email}</span>
+            <span>NIP: {data.site.siteMetadata.nip}</span>
           </address>
         </section>
       </div>
