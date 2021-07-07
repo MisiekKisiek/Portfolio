@@ -255,6 +255,7 @@
     div{
       margin: 20px 0;
       a{
+        @include flex-mother($flex-direction: column, $justify-content:center);
         transition: .2s;
         font-family: Arial, Helvetica, sans-serif;
         text-decoration: none;
@@ -312,6 +313,8 @@
 }
 
 @media (min-width: $breakPoint1) {
+
+  //second section
   .secondSection{
     max-width: $breakPoint2;
     margin: auto;
@@ -355,47 +358,25 @@
   //Fourth section
 
   .fourthSection{
-    max-width: $breakPoint2;
-    margin: auto;
-    padding: 0px 20px 0px;
     h1{
-      @include flex-mother(row, center, center);
-      @include decoration-element($left: 80%);
-      &::after, &::before{
-        content: none;
-      }
-      position: relative;
-      min-height: 100px;
-      padding: 20px 55px;
-      text-align: center;
-      font-family: 'Kanit','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 2rem;
-      word-wrap: break-word;
-      color: $secondColor;
     }
     article{
+      @include flex-mother($flex-direction: row, $flex-wrap: wrap, $justify-content: space-around);
       div{
-        margin: 20px 0;
+        flex-basis: 45%;
+        margin: 20px 0px;
+        &:first-child{
+          margin: 20px 100px;
+        }
         a{
-          transition: .2s;
-          font-family: Arial, Helvetica, sans-serif;
-          text-decoration: none;
-          color: #555;
-          font-size: .6rem;
-          font-weight: bold;
           img{
-            max-width: 100%;
-            border-radius: 5px;
           }
         }
         a:hover, img:hover{
-          opacity: .9;
         }
       }
     }
   }
-  
 }
 
 @media (min-width: $breakPoint11) {
@@ -446,5 +427,29 @@
   }
   .offerContainer{
     @include flex-mother(row, space-between, flex-start);
+  }
+
+  //Fourth section
+
+  .fourthSection{
+    h1{
+    }
+    article{
+      @include flex-mother($flex-direction: row, $flex-wrap: wrap, $justify-content: space-around);
+      div{
+        flex-basis: 31%;
+        margin: 20px 0px;
+        &:first-child{
+          flex-basis: 60%;
+          margin: 20px 100px;
+        }
+        a{
+          img{
+          }
+        }
+        a:hover, img:hover{
+        }
+      }
+    }
   }
 }

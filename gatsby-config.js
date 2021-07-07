@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: "Janusz Filipczyk SmartHydro",
+    title: "Janusz Filipczyk Smarthydro",
     author: "MisiekKisiek",
     email: "jmfilipczyk@gmail.com",
     tel: "+48 791 393 290",

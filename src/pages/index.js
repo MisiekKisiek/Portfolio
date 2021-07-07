@@ -66,7 +66,6 @@ const Main = () => {
   const scrollUtil = useRef(null);
 
   const renderOfferLinks = () => {
-    console.log(process.env.CONTENTFUL_SPACE_ID)
     let links = data.allContentfulOffers.edges.map((offer, index) => {
       const { slug, id, name } = offer.node;
       if (index < 5) {
@@ -97,9 +96,15 @@ const Main = () => {
   const renderRealizationLinks = () => {
     const links = data.allContentfulProjects.edges.map(project => {
       const { slug, shortName, id, image } = project.node;
-      return <div>
+      return <div 
+        key={shortName}
+        data-sal="slide-up"
+        data-sal-delay="300"
+        data-sal-duration="1000"
+        data-sal-easing="ease"
+      >
         <Link
-          key={shortName}
+          
           to={`/projects/${slug}`}
         >
           <img src={`${image[0].fluid.src}`} alt="project" />
