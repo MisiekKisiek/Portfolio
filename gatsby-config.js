@@ -1,22 +1,23 @@
 const path = require('path');
+require("dotenv").config({
+  path: `.env`,
+})
 
 module.exports = {
   siteMetadata: {
     title: "Janusz Filipczyk Smarthydro",
     author: "MisiekKisiek",
-    email: "jmfilipczyk@gmail.com",
+    email: "biuro@smarthydro.pl",
     tel: "+48 791 393 290",
     adress: "30-716 Kraków , Przewóz 32D lok. 9",
-    nip: "6751329560",
+    nip: "675-13-29-560",
   },
   plugins: [
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        // spaceId: process.env.CONTENTFUL_SPACE_ID,
-        // accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        spaceId: "h52rsxy6p2if",
-        accessToken: "bP2mDkKr2lwoqW5vjlo-gav6X3x-dXgLwfk9fH9RnyE",
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {

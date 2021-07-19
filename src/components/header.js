@@ -25,17 +25,10 @@ const Header = ({ curtine }) => {
 
 	const data = useStaticQuery(graphql`
 		query {
-			logo50: file(relativePath: { eq: "smarthydro.png" }) {
+			logo: file(relativePath: { eq: "smarthydro.png" }) {
 				childImageSharp {
 					fluid( maxWidth: 100){
 						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			logo100: file(relativePath: { eq: "smarthydro.png" }) {
-				childImageSharp {
-					fixed( height: 100){
-						...GatsbyImageSharpFixed
 					}
 				}
 			}
@@ -63,7 +56,7 @@ const Header = ({ curtine }) => {
 		<header className={`${headerStyles.header}`}>
 			<div ref={curtine} className={headerStyles.curtine}>
 				<div>
-					<Img fixed={data.logo100.childImageSharp.fixed} />
+					<Img fixed={data.logo.childImageSharp.fluid} />
 				</div>
 			</div>
 			<div className={
@@ -71,7 +64,7 @@ const Header = ({ curtine }) => {
 					`${headerStyles.logo} ${headerStyles.logoActive}` :
 					`${headerStyles.logo}`}
 			>
-				<Img fixed={data.logo50.childImageSharp.fluid} />
+				<Img fixed={data.logo.childImageSharp.fluid} />
 			</div>
 			<button className={
 				menu ?

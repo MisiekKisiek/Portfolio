@@ -96,7 +96,7 @@ const Main = () => {
   const renderRealizationLinks = () => {
     const links = data.allContentfulProjects.edges.map(project => {
       const { slug, shortName, id, image } = project.node;
-      return <div 
+      return <div
         key={shortName}
         data-sal="slide-up"
         data-sal-delay="300"
@@ -104,13 +104,11 @@ const Main = () => {
         data-sal-easing="ease"
       >
         <Link
-          
           to={`/projects/${slug}`}
         >
           <img src={`${image[0].fluid.src}`} alt="project" />
           {shortName}
         </Link>
-
       </div>
     })
     return links
@@ -230,19 +228,13 @@ const Main = () => {
           </h1>
           <article
           >
-            <div 
-              className={mainStyles.paragraph}
-              data-sal="slide-up"
-              data-sal-delay="300"
-              data-sal-duration="1000"
-              data-sal-easing="ease"
-            >
+            <div className={mainStyles.paragraph}>
               <p>
                 Nasze doświadczenie jest budowane przede wszystkim na praktyce, którą zdobywamy przy konkretnych projektach. Jesteśmy otwarci na wszelkie nowe ścieżki rozwoju, co sprawia że ciągle poszerzamy nasze możliwości działania.
-              </p>
+            </p>
               <p>
                 Oczywiście najskuteczniejszym sposobem na udowodnienie kwalifiakcji jest przedstawienie samych projektów, dlatego oto niektóre z nich:
-              </p>
+            </p>
             </div>
             {renderRealizationLinks()}
           </article>

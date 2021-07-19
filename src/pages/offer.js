@@ -101,7 +101,7 @@ const Offer = (props) => {
                 <a href={`mailto:${offers.site.siteMetadata.email}`}> {offers.site.siteMetadata.email}
                 </a> lub telefon{" "}
                 <a href={`tel:${offers.site.siteMetadata.tel}`}>{offers.site.siteMetadata.tel}
-                </a> od pon. do pt. w godzinach 8:00 - 17:00 (kontakt w innym terminie po uprzednim uprzedzeniu).
+                </a> od pon. do pt. w godzinach 8:00 - 22:00 (kontakt w innym terminie po uprzednim uprzedzeniu).
                 <br />
                 <br />
                 <span>Jeżeli zdecydujesz się skorzystać z naszych usług gwarantujemy:</span>

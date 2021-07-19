@@ -40,7 +40,7 @@
 
 .logo {
   height: 90%;
-  width: 120px;
+  min-width: 100px;
   margin: 0 0.5rem;
   z-index: 20;
   color: $fontColorFirst;
