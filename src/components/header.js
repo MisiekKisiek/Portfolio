@@ -27,8 +27,8 @@ const Header = ({ curtine }) => {
 		query {
 			logo50: file(relativePath: { eq: "smarthydro.png" }) {
 				childImageSharp {
-					fixed( height: 50){
-						...GatsbyImageSharpFixed
+					fluid( maxWidth: 100){
+						...GatsbyImageSharpFluid
 					}
 				}
 			}
@@ -71,7 +71,7 @@ const Header = ({ curtine }) => {
 					`${headerStyles.logo} ${headerStyles.logoActive}` :
 					`${headerStyles.logo}`}
 			>
-				<Img fixed={data.logo50.childImageSharp.fixed} />
+				<Img fixed={data.logo50.childImageSharp.fluid} />
 			</div>
 			<button className={
 				menu ?

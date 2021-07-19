@@ -230,13 +230,19 @@ const Main = () => {
           </h1>
           <article
           >
-            <div className={mainStyles.paragraph}>
+            <div 
+              className={mainStyles.paragraph}
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <p>
                 Nasze doświadczenie jest budowane przede wszystkim na praktyce, którą zdobywamy przy konkretnych projektach. Jesteśmy otwarci na wszelkie nowe ścieżki rozwoju, co sprawia że ciągle poszerzamy nasze możliwości działania.
-            </p>
+              </p>
               <p>
                 Oczywiście najskuteczniejszym sposobem na udowodnienie kwalifiakcji jest przedstawienie samych projektów, dlatego oto niektóre z nich:
-            </p>
+              </p>
             </div>
             {renderRealizationLinks()}
           </article>

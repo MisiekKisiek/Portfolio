@@ -19,6 +19,13 @@ const About = () => {
           }
 				}
 			}
+			avatarJanusz: file(relativePath: { eq: "Janusz_Filipczyk.jpg" }) {
+				childImageSharp {
+          fluid{
+            ...GatsbyImageSharpFluid
+          }
+				}
+			}
 		}
   `)
 
@@ -38,8 +45,8 @@ const About = () => {
               Jesteśmy grupą specjalistów z kierunkowym wykształceniem oraz doświadzczeniem w dziedzinie budownictwa lądowego i wodnego, współpracująca pod szyldem <strong>Smart Hydro</strong>, przy kierownictwie właściciela oraz głównego specjalisty <strong>Janusza Filipczyka</strong>.
             </p>
             <div className={aboutStyles.image} >
-              <Img fluid={data.avatar.childImageSharp.fluid} />
-              <span>Obraz: Zespół Smart Hydro</span>
+              <Img fluid={data.avatarJanusz.childImageSharp.fluid} />
+              <span>Obraz: Janusz Filipczyk</span>
             </div>
             <p>
               Tworzymy projekty z wielu dziedzin związanych z budownictwem, a celem wszystkich osób pracujących przy projektach dla <strong>Smart Hydro</strong> jest profesjonalna obsługa, rzetelność i profesjonalizm przy realizacji projektu oraz sprawna i szybka realizacja tematu <strong>!</strong>
