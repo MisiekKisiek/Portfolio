@@ -74,7 +74,7 @@ const Offer = (props) => {
             </div>
             <article>
               <span>
-                Oferujemy szeroki zakres usług poczynając od <strong>analiz konstrukcyjnych oraz środowiskowych</strong>, poprzez <strong>pomoc prawną głównie dla legalizacji samowoli budowlanych</strong>, do szerokiego zakresu <strong>realizacji z dziedziny budownictwa hydrotechnicznego</strong>.
+                Oferujemy szeroki zakres usług poczynając od <strong>analiz konstrukcyjnych oraz środowiskowych</strong>, poprzez <strong>pomoc prawną, głównie dla legalizacji samowoli budowlanych</strong>, do <strong>realizacji z dziedziny budownictwa hydrotechnicznego</strong>.
               </span>
               <Img fluid={offers.offerPic.childImageSharp.fluid} />
             </article>
@@ -99,9 +99,9 @@ const Offer = (props) => {
                 {" "}
                 lub bezpośrednio przez mail
                 <a href={`mailto:${offers.site.siteMetadata.email}`}> {offers.site.siteMetadata.email}
-                </a> lub telefon{" "}
+                </a> i telefon{" "}
                 <a href={`tel:${offers.site.siteMetadata.tel}`}>{offers.site.siteMetadata.tel}
-                </a> od pon. do pt. w godzinach 8:00 - 22:00 (kontakt w innym terminie po uprzednim uprzedzeniu).
+                </a> od pon. do pt. w godzinach 8:00 - 22:00 (kontakt w innym terminie po uprzednim umówieniu).
                 <br />
                 <br />
                 <span>Jeżeli zdecydujesz się skorzystać z naszych usług gwarantujemy:</span>

@@ -57,6 +57,8 @@ const Main = () => {
       site{
         siteMetadata{
             author
+            email
+            tel
         }
       }
     }
@@ -168,7 +170,7 @@ const Main = () => {
                 data-sal-duration="1000"
                 data-sal-easing="ease"
               >
-                Jesteśmy grupą specjalistów z kierunkowym wykształceniem oraz doświadzczeniem w dziedzinie budownictwa lądowego i wodnego, współpracująca pod szyldem <strong>Smart Hydro</strong>.
+                Jesteśmy grupą specjalistów z kierunkowym wykształceniem oraz doświadczeniem w dziedzinach budownictwa lądowego i wodnego, współpracującą pod szyldem <strong>Smart Hydro</strong>.
             </p>
               <p
                 data-sal="slide-up"
@@ -210,7 +212,7 @@ const Main = () => {
               data-sal-easing="ease"
             >
               <p>
-                Jeżeli masz zadanie z dziedzin budownictwa lądowego i/lub hydrotechnicznego, który nie zawiera się w naszej ofercie wyślij zgłoszenie z opisem  poprzez <Link to="/contact">formularz kontaktowy</Link>.
+                Jeżeli masz zlecenie z dziedzin budownictwa lądowego i/lub hydrotechnicznego, który nie zawiera się w naszej ofercie wyślij zgłoszenie z opisem zagadnienia poprzez <Link to="/contact"> formularz kontaktowy</Link>.
               </p>
             </div>
           </div>
@@ -228,13 +230,19 @@ const Main = () => {
           </h1>
           <article
           >
-            <div className={mainStyles.paragraph}>
+            <div 
+              className={mainStyles.paragraph}
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <p>
                 Nasze doświadczenie jest budowane przede wszystkim na praktyce, którą zdobywamy przy konkretnych projektach. Jesteśmy otwarci na wszelkie nowe ścieżki rozwoju, co sprawia że ciągle poszerzamy nasze możliwości działania.
-            </p>
+              </p>
               <p>
-                Oczywiście najskuteczniejszym sposobem na udowodnienie kwalifiakcji jest przedstawienie samych projektów, dlatego oto niektóre z nich:
-            </p>
+                Oczywiście najskuteczniejszym sposobem na udowodnienie kwalifiakcji jest przedstawienie naszych osiągnięć, dlatego oto niektóre z nich:
+              </p>
             </div>
             {renderRealizationLinks()}
           </article>
@@ -256,7 +264,9 @@ const Main = () => {
             data-sal-duration="1000"
             data-sal-easing="ease"
           >
-            Zapraszamy do kontaktu poprzez formularz,bezpośrednio przez telefon lub e-mail <Link to="/contact">TU</Link>.
+            Zapraszamy do kontaktu bezpośrednio przez telefon {" "}
+            <a href={`tel:${data.site.siteMetadata.tel}`}>{data.site.siteMetadata.tel}</a>, e-mail 
+            <a href={`mailto:${data.site.siteMetadata.email}`}> {data.site.siteMetadata.email}</a> lub poprzez formularz <Link to="/contact">TU</Link>.
           </p>
         </section>
       </main>

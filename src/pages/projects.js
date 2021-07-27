@@ -47,6 +47,7 @@ const Projects = () => {
         <SingleProject node={e.node} key={e.node.id} />
       )
     })
+    console.log(projects);
     return projectList
   }
   return (
