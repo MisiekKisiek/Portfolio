@@ -8,7 +8,7 @@ module.exports = {
     title: "Janusz Filipczyk Smarthydro",
     author: "MisiekKisiek",
     email: "biuro@smarthydro.pl",
-    tel: "+48 791 393 290",
+    tel: "+48 791-393-290",
     adress: "30-716 Kraków , Przewóz 32D lok. 9",
     nip: "675-13-29-560",
   },

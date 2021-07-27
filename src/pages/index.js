@@ -265,7 +265,7 @@ const Main = () => {
             data-sal-easing="ease"
           >
             Zapraszamy do kontaktu bezpośrednio przez telefon {" "}
-            <a href={`tel:${data.site.siteMetadata.tel}`}>{data.site.siteMetadata.tel}</a>, e-mail 
+            <a href={`tel:${data.site.siteMetadata.tel}`}>{data.site.siteMetadata.tel}</a> albo e-mail 
             <a href={`mailto:${data.site.siteMetadata.email}`}> {data.site.siteMetadata.email}</a> lub poprzez formularz <Link to="/contact">TU</Link>.
           </p>
         </section>

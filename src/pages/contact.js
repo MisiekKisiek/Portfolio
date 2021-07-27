@@ -114,14 +114,14 @@ const Contact = () => {
     }
 
     handleFormAlert("Wysyłanie");
-    emailjs.sendForm('gmail', 'template_test', e.target, 'user_qZY7FllS46aSyJuEosQN8')
+    emailjs.sendForm('service_tt8pcwm', 'Smarthydro', e.target, 'user_UY3CZQOnKLVnm95tM8eQB')
       .then((result) => {
         console.log(result.text);
         handleSubmitContactForm();
         handleFormAlert("Wiadomość została wysłana!", alertColors.correct);
       }, (error) => {
         console.log(error.text);
-        handleFormAlert("Wiadomość nie została przesłana", alertColors.correct);
+        handleFormAlert("Wiadomość nie została przesłana", alertColors.wrong);
       });
   }
 

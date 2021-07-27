@@ -370,12 +370,6 @@
         &:first-child{
           margin: 20px 100px;
         }
-        a{
-          img{
-          }
-        }
-        a:hover, img:hover{
-        }
       }
     }
   }
@@ -390,44 +384,13 @@
   //thirdSection
 
   .thirdSection{
-    max-width: $breakPoint2;
-    margin: auto;
-    padding: 0px 20px;
-    h1{
-      @include flex-mother(row, center, center);
-      @include decoration-element($left: 80%);
-      &::after, &::before{
-        content: none;
-      }
-      position: relative;
-      min-height: 100px;
-      padding: 20px 55px;
-      text-align: center;
-      font-family: 'Kanit','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 2rem;
-      word-wrap: break-word;
-      color: $secondColor;
-    }
+  }
+  h1{
+    font-family: 'Kanit','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   .offerList{
     min-width: 20%;
     max-width: 25%;
-    padding: 0 20px;
-    color: $secondColor;
-    li{
-      padding: 2px 0;
-      &:first-child{
-        padding-top: 0;
-      }
-      &:last-child{
-        padding-bottom: 10px;
-      }
-      a{
-        font-size: 1.1rem;
-        color: $secondColor;
-      }
-    }
   }
   .offerContainer{
     @include flex-mother(row, space-between, flex-start);
@@ -448,10 +411,9 @@
           margin: 20px 100px;
         }
         a{
-          img{
+          &:hover{
+            transform: scale(1.02);
           }
-        }
-        a:hover, img:hover{
         }
       }
     }
