@@ -68,9 +68,9 @@ const Main = () => {
   const scrollUtil = useRef(null);
 
   const renderOfferLinks = () => {
-    let links = data.allContentfulOffers.edges.map((offer, index) => {
+    let links = data.allContentfulOffers.edges.map((offer, index, array) => {
       const { slug, id, name } = offer.node;
-      if (index < 5) {
+      if (index < array.length - 1 && index < 5) {
         return <li key={id}>
           <Link
             to={`/offer/${slug}`}
@@ -78,14 +78,14 @@ const Main = () => {
             {name + ","}
           </Link>
         </li>
-      } else if (index === 5) {
-        return <li key={id}>
+      } else if (index === array.length || index <= 5) {
+        return (<li key={id}>
           <Link
             to={`/offer/${slug}`}
           >
             ...więcej
-        </Link>
-        </li>
+          </Link>
+        </li>)
       } else {
         return
       }
@@ -230,7 +230,7 @@ const Main = () => {
           </h1>
           <article
           >
-            <div 
+            <div
               className={mainStyles.paragraph}
               data-sal="slide-up"
               data-sal-delay="300"
@@ -265,7 +265,7 @@ const Main = () => {
             data-sal-easing="ease"
           >
             Zapraszamy do kontaktu bezpośrednio przez telefon {" "}
-            <a href={`tel:${data.site.siteMetadata.tel}`}>{data.site.siteMetadata.tel}</a> albo e-mail 
+            <a href={`tel:${data.site.siteMetadata.tel}`}>{data.site.siteMetadata.tel}</a> albo e-mail
             <a href={`mailto:${data.site.siteMetadata.email}`}> {data.site.siteMetadata.email}</a> lub poprzez formularz <Link to="/contact">TU</Link>.
           </p>
         </section>

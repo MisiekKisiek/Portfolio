@@ -2,14 +2,15 @@
 @import "./Mixins";
 @import url('https://fonts.googleapis.com/css2?family=Goldman:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
+
 
 @keyframes wordWalking {
-  0%{left: -80px; opacity:0;}
-  2%{left: 80px; opacity:1;}
-  23%{left: 80px; opacity:1;}
-  25%{left: 240px; opacity:0;}
-  100%{left: 240px; opacity:0;}
+  0%{left: 0px; opacity:0;}
+  5%{left: 80px; opacity:1;}
+  20%{left: 80px; opacity:1;}
+  25%{left: 120px; opacity:0;}
+  95%{left: 120px; opacity:0;}
+  100%{left: 0px; opacity:0;}
 }
 
 @keyframes buttonBorder {
@@ -97,7 +98,6 @@
       width: 160px;
       height: 25px;
       font-size: 1.2rem;
-      overflow: hidden;
       span{
         position: absolute;
         top: 0;
@@ -106,13 +106,14 @@
         letter-spacing: 1px;
         font-weight: normal;
         color: #555;
-        animation: wordWalking 24s infinite;
+        opacity: 0;
+        animation: wordWalking 12s infinite;
         +span{
-          animation: wordWalking 24s 6s infinite;
+          animation: wordWalking 12s 3s infinite;
           +span{
-            animation: wordWalking 24s 12s infinite;
+            animation: wordWalking 12s 6s infinite;
             +span{
-              animation: wordWalking 24s 18s infinite;
+              animation: wordWalking 12s 9s infinite;
             }
           }
         }
