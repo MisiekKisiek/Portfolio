@@ -12,7 +12,7 @@ const About = () => {
 
   const data = useStaticQuery(graphql`
 		query {
-			avatar: file(relativePath: { eq: "janusz.png" }) {
+			team: file(relativePath: { eq: "team.jpg" }) {
 				childImageSharp {
           fluid{
             ...GatsbyImageSharpFluid
@@ -76,8 +76,7 @@ const About = () => {
           <article className={aboutStyles.article}>
             <p>Przede wszystkim celujemy w profesjonalne i szybkie wykonanie usługi bez narażania klienta na niepotrzebne koszta. Zadania których się podejmujemy sprawiają, że nad każdą sprawą musimy pochylić się indywidualnie, co w efekcie pozwala nam na optymalizację zlecenia wedle potrzeb klienta.</p>
             <div className={aboutStyles.image} >
-              <Img fluid={data.avatar.childImageSharp.fluid} />
-              <span>Obraz: Zespół Smart Hydro</span>
+              <Img fluid={data.team.childImageSharp.fluid} />
             </div>
             <p>Optymistycznie patrzymy w przyszłość, w naszych planach mamy rozwijanie marki, rozszerzenie działalności na kolejne gałęzie ze swery budownictwa oraz oczywiście baczne przyglądanie się zmianom w prawie jak i na rynku dla dziedzin budownictwa w których świadczymy usługi.</p>
           </article>

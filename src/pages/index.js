@@ -16,7 +16,7 @@ const Main = () => {
 
   const data = useStaticQuery(graphql`
 		query {
-			avatar: file(relativePath: { eq: "janusz.png" }) {
+			engineersTeam: file(relativePath: { eq: "engineers-team.jpg" }) {
 				childImageSharp {
           fluid{
             ...GatsbyImageSharpFluid
@@ -160,7 +160,7 @@ const Main = () => {
               data-sal-easing="ease"
             >
               <Img
-                fluid={data.avatar.childImageSharp.fluid}
+                fluid={data.engineersTeam.childImageSharp.fluid}
               />
             </div>
             <div className={mainStyles.paragraph}>

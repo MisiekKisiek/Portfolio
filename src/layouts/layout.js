@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import MainWrap from '../components/mainWrap';
+import FacebookIcon from '../components/facebookIcon';
 
 //Context
 import AppProvider from '../context/App.provider';
@@ -22,6 +23,7 @@ const Layout = ({ children }) => {
                 <Footer
                     curtine={curtine}
                 />
+                <FacebookIcon/>
             </MainWrap>
         </AppProvider>
     );

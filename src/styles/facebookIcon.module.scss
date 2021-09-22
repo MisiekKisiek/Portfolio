@@ -1,0 +1,71 @@
+@import "./Variables";
+@import "./Mixins";
+
+.facebookIcon{
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 99;
+  &:visited{
+    color: black;
+  }
+  svg{
+    font-size: 3rem;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    color: #1877f2;
+    overflow: hidden;
+  }
+  span{
+    display: none;
+    position: absolute;
+    top: -6.5em;
+    left: -5em;
+    margin: .5em auto;
+    padding: 1em;
+    width: 10em; 
+    height: 4em;
+    border-radius: .25em;
+    transform: rotate(-4deg) rotateY(15deg);
+    background: #629bdd;
+    font: .65rem Century Gothic, Verdana, sans-serif;
+    text-align: center;
+    &:after, &:before{
+      position: absolute;
+      z-index: -1;
+      content: '';
+    }
+    &:after{
+      top: 0; 
+      right: 0; 
+      bottom: 0; 
+      left: 0;
+      border-radius: inherit;
+      transform: rotate(2deg) translate(.35em, -.15em) scale(1.02);
+      background: #f4fbfe;
+    }
+    &:before{
+      border: solid 0 transparent;
+      border-right: solid 3.5em #f4fbfe;
+      border-bottom: solid .25em #629bdd;
+      bottom: .25em; 
+      left: 1.25em;
+      width: 0; height: 1em;
+      transform: rotate(45deg) skewX(75deg);
+    }
+  }
+}
+
+@media (min-width: $breakPoint2){
+  .facebookIcon{
+    &:hover{
+      span{
+        display: block;
+      }
+    }
+  }
+}
