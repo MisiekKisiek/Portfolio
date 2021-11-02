@@ -49,7 +49,7 @@ const OfferTemplate = (props) => {
   const { slug, name, description, services, image } = props.data.contentfulOffers
 
   const options = {
-    renderNode: {},
+    renderNode: {}
   }
 
   return (<>
@@ -72,8 +72,8 @@ const OfferTemplate = (props) => {
             {documentToReactComponents(description.json, options)}
           </div>
           <div className={templateStyles.image}>
-            {image || <Img fluid={image.fluid} />}
-            <span>Obraz: {image || image.title}</span>
+            {image?<Img fluid={image.fluid} />:null}
+            <span>Obraz: {image?image.title:""}</span>
           </div>
           <div className={templateStyles.description}>
             <h3>Główny zakres usług:</h3>

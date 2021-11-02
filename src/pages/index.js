@@ -108,7 +108,7 @@ const Main = () => {
         <Link
           to={`/projects/${slug}`}
         >
-          <img src={`${image[0].fluid.src}`} alt="project" />
+          {image?<img src={`${image[0].fluid.src}`} alt="project" />:null}
           {shortName}
         </Link>
       </div>
