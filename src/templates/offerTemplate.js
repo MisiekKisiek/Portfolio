@@ -72,8 +72,8 @@ const OfferTemplate = (props) => {
             {documentToReactComponents(description.json, options)}
           </div>
           <div className={templateStyles.image}>
-            <Img fluid={image?image[0].fluid:null} />
-            {image?<span>Obraz: {image[0].title}</span>:null}
+            {image?<Img fluid={image.fluid} />:null}
+            {image?<span>Obraz: {image.title}</span>:null}
           </div>
           <div className={templateStyles.description}>
             <h3>Główny zakres usług:</h3>
