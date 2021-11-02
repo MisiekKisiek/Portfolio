@@ -65,8 +65,8 @@ const Project = (props) => {
               {documentToReactComponents(description.json, options)}
             </div>
             <div className={templateStyles.image}>
-              <Img fluid={image[0].fluid} />
-              <span>Obraz: {image[0].title}</span>
+              {image || <Img fluid={image[0].fluid} />}
+              <span>Obraz: {image || image[0].title}</span>
             </div>
           </article>
         </div>
