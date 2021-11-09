@@ -74,7 +74,7 @@ const Offer = (props) => {
             </div>
             <article>
               <span>
-                Oferujemy szeroki zakres usług poczynając od <strong>analiz konstrukcyjnych oraz środowiskowych</strong>, poprzez <strong>pomoc prawną, głównie dla legalizacji samowoli budowlanych</strong>, do <strong>realizacji z dziedziny budownictwa hydrotechnicznego</strong>.
+                Drodzy państwo poniżej spróbujemy przybliżyć, to co możemy zaoferować. Zajmujemy się szeroko pojętnym budownictwem. Profil naszej firmy ze względu na grono eksperckie jakie posiadamy skupia się na budownictwie wodnym i kubaturowym.
               </span>
               <Img fluid={offers.offerPic.childImageSharp.fluid} />
             </article>
@@ -84,7 +84,9 @@ const Offer = (props) => {
               </h2>
             </div>
             <article>
-              <span>W świetle zmian w prawie dot. <strong>legalizacji samowoli budowlanych </strong> jesteśmy przygotowani na podjęcie się najbardziej skomplikowanych zleceń dotyczących tej materii. Doświadczenie w tej dziedzinie oraz gruntowna analiza przepisów i nowinek pozwala nam na profesjonalne, szybkie i skuteczne działania na rzecz klienta.</span>
+              <span>
+                Bardzo dobrze czujemy się w pracach projektowych wykonywanych dla nadzoru budowlanego. Ekspertyzy, oceny techniczne i legalizacje to nasza codzienność.  Wiemy, że  dla państwa kontakty z nadzorem budowlanym bywają trudne dlatego świadczymy także usługę pełnomocnictwa w prowadzonych przez nas sprawach.  Chcąc pokazać, że nie taki diabeł straszny jak go opisują, poniżej przedstawimy pokrótce najważniejsze typy wykonywanych przez nas prac projektowych.
+              </span>
               <Img fluid={offers.lawPic.childImageSharp.fluid} />
             </article>
             <div>
