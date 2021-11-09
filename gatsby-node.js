@@ -25,23 +25,27 @@ module.exports.createPages = async ({ graphql, actions }) => {
   `)
 
   res.data.allContentfulOffers.edges.forEach(edge => {
-    createPage({
-      component: offerTemplate,
-      path: `/offer/${edge.node.slug}`,
-      context: {
-        slug: edge.node.slug,
-      }
-    })
+    if(edge.node.slug){
+      createPage({
+        component: offerTemplate,
+        path: `/offer/${edge.node.slug}`,
+        context: {
+          slug: edge.node.slug,
+        }
+      })
+    } else return
   })
 
   res.data.allContentfulProjects.edges.forEach(edge => {
-    createPage({
-      component: projectTemplate,
-      path: `/projects/${edge.node.slug}`,
-      context: {
-        slug: edge.node.slug,
-      }
-    })
+    if(edge.node.slug){
+      createPage({
+        component: projectTemplate,
+        path: `/projects/${edge.node.slug}`,
+        context: {
+          slug: edge.node.slug,
+        }
+      })
+    } else return
   })
 }
 

@@ -58,26 +58,26 @@ const OfferTemplate = (props) => {
       <h1 className={templateStyles.title}>Nasza oferta</h1>
       <div>
         <AsideMenu
-          title={name}
+          title={name?name:""}
           query={props.data.allContentfulOffers}
           path={paths.offer}
         />
         <article className={templateStyles.article}>
           <div className={templateStyles.secondTitle}>
             <h2>
-              {name}
+              {name?name:""}
             </h2>
           </div>
           <div className={templateStyles.description}>
-            {documentToReactComponents(description.json, options)}
+            {description?documentToReactComponents(description.json, options):null}
           </div>
           <div className={templateStyles.image}>
             {image?<Img fluid={image.fluid} />:null}
             {image?<span>Obraz: {image.title}</span>:null}
           </div>
           <div className={templateStyles.description}>
-            <h3>Główny zakres usług:</h3>
-            {documentToReactComponents(services.json, options)}
+            {services?<h3>Główny zakres usług:</h3>:null}
+            {services?documentToReactComponents(services.json, options):null}
           </div>
         </article>
       </div>

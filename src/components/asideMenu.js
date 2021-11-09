@@ -9,15 +9,17 @@ const AsideMenu = ({ title, query, path, curtine }) => {
 
   const menuItems = query ? query.edges.map(item => {
     const { name, slug, id } = item.node;
-    return (
-      <li key={id} className={title && title === name ? menuStyles.activeListItem : ""}>
-        <Link
-          to={path ? `/${path}/${slug}` : ""}
-        >
-          {name}
-        </Link>
-      </li>
-    )
+    if(slug){
+      return (
+        <li key={id} className={title && title === name ? menuStyles.activeListItem : ""}>
+          <Link
+            to={path ? `/${path}/${slug}` : ""}
+          >
+            {name}
+          </Link>
+        </li>
+      )
+    } else return
   }) : null;
 
   return (
